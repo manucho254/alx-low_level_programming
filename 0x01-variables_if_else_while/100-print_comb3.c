@@ -10,10 +10,11 @@
 int main(void)
 {
 	int val = '0';
+	int new_val = '0';
 
 	for (val = '0'; val <= '9'; val++)
 	{
-		for (int new_val = val; new_val <= '9'; new_val++)
+		for (new_val = val; new_val <= '9'; new_val++)
 		{
 			if (val != new_val)
 			{
