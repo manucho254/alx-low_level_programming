@@ -3,7 +3,7 @@
 /**
  * main - Entry poin
  * Return: always 0 if success
- * Program to print all combinations of single digit numbers
+ * Program to print all combinations of 2 digit numbers
  *
  */
 
