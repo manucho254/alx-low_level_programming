@@ -11,7 +11,7 @@ int main(void)
 {
 	int d = '0';
 
-	for (d = '0'; d <= '10'; d++)
+	for (d = '0'; d <= '9'; d++)
 	{
 		putchar(d);
 	}
