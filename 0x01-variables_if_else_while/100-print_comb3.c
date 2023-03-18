@@ -9,22 +9,22 @@
 
 int main(void)
 {
-	int val = '0';
-	int new_val = '0';
+	int num_1 = '0';
+	int num_2 = '0';
 
-	for (val = '0'; val <= '9'; val++)
+	for (num_1 = '0'; num_1 <= '9'; num_1++)
 	{
-		for (new_val = val; new_val <= '9'; new_val++)
+		for (num_2 = num_1; num_2 <= '9'; num_2++)
 		{
-			if (val != new_val)
+			if (num_1 != num_2)
 			{
-				if (val != '0' || new_val != '1')
+				if (num_1 != '0' || num_2 != '1')
 				{
 					putchar(' ');
 				}
-				putchar(val);
-				putchar(new_val);
-				if (val != '8' || new_val != '9')
+				putchar(num_1);
+				putchar(num_2);
+				if (num_1 != '8' || num_2 != '9')
 				{
 					putchar(',');
 				}
