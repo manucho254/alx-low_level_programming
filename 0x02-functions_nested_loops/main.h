@@ -1,5 +1,8 @@
 
-/** function to print a single character to stdout */
+/** 
+ * function to print a single character to stdout 
+ * function return a character
+ * */
 
 char _putchar (int ch);
 
@@ -11,10 +14,25 @@ void print_alphabet(void);
 
 void print_alphabet_x10(void);
 
-/** function to check if character is lowercase */
+/** 
+ * function to check if character is lowercase 
+ * 
+ * function returns an interger
+ * */
 
 int _islower(int c);
 
-/** function to check if character is an alphabet can be lower or upercase */
+/** 
+ * function to check if character is an alphabet can be lower or upercase 
+ * 
+ * function returns an integer
+ * */
 
 int _isalpha(int c);
+
+/** 
+ * function to print different signs if certain conditions are met 
+ * function returns an interger
+ */
+
+int print_sign(int n);
