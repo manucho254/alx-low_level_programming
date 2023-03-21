@@ -3,16 +3,19 @@
 /**
  * print_last_digit - function to get the last value in an integer
  *
- * @n: number to be converted to get last value from
+ * @num: number to get the last digit from
  *
- * Return: the value in the return will be the last value @n
+ * Return: the value in the return will be the last value @num
  *
  */
 
-int print_last_digit(int n)
+int print_last_digit(int num)
 {
-	int last = _abs(n % 10);
+	int last = _abs(num % 10);
 
-	_putchar(last);
+	if (last < 0)
+		last = last * -1;
+
+	_putchar(last + '0');
 	return (last);
 }
