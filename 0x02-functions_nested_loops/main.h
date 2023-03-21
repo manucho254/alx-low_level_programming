@@ -5,4 +5,8 @@ char _putchar (int ch);
 
 /** function to print the alphabet in lowercase letters */
 
-void print_alphabet(void); 
+void print_alphabet(void);
+
+/** function to print the alphanbet in lowercase ten times */
+
+void print_alphabet_x10(void);
