@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * print_sign - function to check for uppercase or lowercase letters
+ * print_sign - function to check if value is greater,
+ * than less than or equal to zero an return a specific sign for ecah condition
  *
  * @n: interger value to use for checks
  *
