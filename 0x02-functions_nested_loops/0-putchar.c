@@ -15,7 +15,7 @@ int main(void)
 	int length = strlen(word);
 	int x;
 
-	for (x = 0; x <= length; x++)
+	for (x = 0; x < length; x++)
 	{
 		_putchar(word[x]);
 	}
