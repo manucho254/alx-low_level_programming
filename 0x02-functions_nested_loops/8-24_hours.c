@@ -13,7 +13,7 @@ void jack_bauer(void)
 
 	for (min = 0; min < day_mins; min++)
 	{
-		if (min % 60 && min != 0)
+		if (min % 60)
 		{
 			hour = min / 60;
 			for (x = 0; x < 60; x++)
