@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <main.h>
+#include <string.h>
 
 /**
  * main - Entry point
@@ -10,6 +12,14 @@
 
 int main(void)
 {
-	printf("_putchar\n");
+	char word[10] = "_putchar";
+	int length = strlen(word);
+	int x;
+
+	for (x = 0; x <= length; x++)
+	{
+		_putchar(word[x]);
+	}
+	putchar("\n");
 	return (0);
 }
