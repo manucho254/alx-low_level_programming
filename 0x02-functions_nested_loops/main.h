@@ -56,3 +56,11 @@ int print_last_digit(int num);
  */
 
 void jack_bauer(void);
+
+/**
+ * function to print 9 times table 
+ */
+
+void times_table(void);
+
+
