@@ -11,7 +11,7 @@
 
 int main(void)
 {
-	char word[10] = "_putchar";
+	char word[] = "_putchar";
 	int length = strlen(word);
 	int x;
 
