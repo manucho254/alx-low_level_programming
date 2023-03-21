@@ -1,1 +1,6 @@
-char _putchar (int char);
+#include <stdio.h>
+
+char _putchar (char ch)
+{
+	putchar(ch);
+}
