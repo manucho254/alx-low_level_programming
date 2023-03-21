@@ -50,3 +50,9 @@ int _abs(int n);
  */
 
 int print_last_digit(int num);
+
+/**  
+ * function to print every minute of the day
+ */
+
+void jack_bauer(void);
