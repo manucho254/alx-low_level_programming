@@ -43,3 +43,10 @@ int print_sign(int n);
  */
 
 int _abs(int n);
+
+/** 
+ * function to get the last value of an integer
+ * returns an integer
+ */
+
+int print_last_digit(int n);
