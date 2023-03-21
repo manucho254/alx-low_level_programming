@@ -17,7 +17,7 @@ void print_alphabet_x10(void);
 /** 
  * function to check if character is lowercase 
  * 
- * function returns an interger
+ * function returns an integer
  * */
 
 int _islower(int c);
@@ -32,7 +32,14 @@ int _isalpha(int c);
 
 /** 
  * function to print different signs if certain conditions are met 
- * function returns an interger
+ * function returns an integer
  */
 
 int print_sign(int n);
+
+/** 
+ * function to get the absolute value of a number 
+ * returns an integer
+ */
+
+int _abs(int n);
