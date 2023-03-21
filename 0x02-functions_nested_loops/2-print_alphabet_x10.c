@@ -1,4 +1,4 @@
-#include "main.h";
+#include "main.h"
 
 /**
  * print_alphabet_x10 - function to print the alphabet in lowercase letters 10x
