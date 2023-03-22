@@ -66,9 +66,8 @@ void less_than_98(int lt)
 		{
 			_putchar(',');
 		}
-
-		_putchar('\n');
 	}
+	_putchar('\n');
 }
 
 void greater_than_98(int gt)
