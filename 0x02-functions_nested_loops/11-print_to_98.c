@@ -76,7 +76,7 @@ void greater_than_98(int gt)
 
 	for (y = gt; y >= 98; y--)
 	{
-		if (y != 98)
+		if (y != gt)
 		{
 			_putchar(' ');
 		}
