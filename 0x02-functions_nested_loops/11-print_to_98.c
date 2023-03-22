@@ -1,20 +1,13 @@
 #include "main.h"
 
+void print_less_than_98(int lt);
+void print_greater_than_or_equal_to_98(int gt);
+
 /**
- * print_to_98 - print all natural numbers from n to 98
- * @n: file
- * Description:  print all
+ * print_to_98 - function to print all number between n and 98
  *
- * less_than_98 - for values less than 98
- * @lt: less than value
- *
- * greater_than_98 - for values greater than 98
- * @gt: greater than value
+ * @n: number to start from
  */
-
-
-void less_than_98(int lt);
-void greater_than_98(int gt);
 
 void print_to_98(int n)
 {
@@ -28,7 +21,13 @@ void print_to_98(int n)
 	}
 }
 
-void less_than_98(int lt)
+/**
+ * print_less_than_98 - function to help in printing numbers less than 98
+ *
+ * @lt: number to to start from
+ */
+
+void print_less_than_98(int lt)
 {
 	int x;
 	int new;
@@ -76,7 +75,14 @@ void less_than_98(int lt)
 	_putchar('\n');
 }
 
-void greater_than_98(int gt)
+/**
+ * print_greater_than_or_equal_to_98 - function to print values,
+ * greater or equal to 98
+ *
+ * @gt: number to start from
+ */
+
+void print_greater_than_or_equal_to_98(int gt)
 {
 	int y;
 
