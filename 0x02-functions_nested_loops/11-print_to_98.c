@@ -13,11 +13,11 @@ void print_to_98(int n)
 {
 	if (n < 98)
 	{
-		less_than_98(n);
+		print_less_than_98(n);
 	}
 	else
 	{
-		greater_than_98(n);
+		print_greater_than_or_equal_to_98(n);
 	}
 }
 
