@@ -77,3 +77,8 @@ int add(int n1, int n2);
 
 void print_to_98(int n);
 
+/**
+ * function to print the times table upto n
+ */
+
+void print_times_table(int n);
