@@ -80,7 +80,7 @@ void greater_than_98(int gt)
 		{
 			_putchar(' ');
 		}
-		if (y < 99)
+		if (y <= 99)
 		{
 			_putchar((y / 10) + '0');
 			_putchar((y % 10) + '0');
