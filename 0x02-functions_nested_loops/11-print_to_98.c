@@ -43,7 +43,7 @@ void less_than_98(int lt)
 		{
 			new = x * -1;
 			_putchar('-');
-			if (new < 100)
+			if (new < 10)
 			{
 				_putchar(new + '0');
 			}
