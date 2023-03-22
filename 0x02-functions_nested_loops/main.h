@@ -70,3 +70,10 @@ void times_table(void);
 
 int add(int n1, int n2);
 
+
+/**
+ * function print all natural numbers from (n an interger to 98) 
+ */
+
+void print_to_98(int n);
+
