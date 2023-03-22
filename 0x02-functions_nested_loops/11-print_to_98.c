@@ -52,15 +52,15 @@ void less_than_98(int lt)
 				_putchar((new / 10) + '0');
 				_putchar((new % 10) + '0');
 			}
-			else if (x < 10)
-			{
-				_putchar(x + '0');
-			}
-			else
-			{
-				_putchar((x / 10) + '0');
-				_putchar((x % 10) + '0');
-			}
+		}
+		else if (x < 10)
+		{
+			_putchar(x + '0');
+		}
+		else
+		{
+			_putchar((x / 10) + '0');
+			_putchar((x % 10) + '0');
 		}
 		if (x != 98)
 		{
