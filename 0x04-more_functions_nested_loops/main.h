@@ -39,3 +39,9 @@ void print_numbers(void);
  */
 
 void print_most_numbers(void);
+
+/**
+ * most_numbers - function to print 0 to 14 ten times
+ */
+
+void more_numbers(void);
