@@ -1,7 +1,6 @@
 #include <math.h>
 #include <stdio.h>
 
-long long int largest_prime_factor(long long int n);
 
 /**
  * main - entry point
@@ -12,22 +11,6 @@ long long int largest_prime_factor(long long int n);
 int main(void)
 {
 	long long int n = 612852475143;
-
-	printf("%llu\n", largest_prime_factor(n));
-
-	return (0);
-}
-
-/**
- * largest_prime_factor - function to get the largest prime factor
- *
- * @n: value to find largest prime factor
- *
- * Return: return an integer
- */
-
-long long int largest_prime_factor(long long int n)
-{
 	int x;
 
 	for (x = 2; x <= sqrt(n); x++)
@@ -40,5 +23,7 @@ long long int largest_prime_factor(long long int n)
 			}
 		}
 	}
+
+	printf("%llu\n", n);
 	return (n);
 }
