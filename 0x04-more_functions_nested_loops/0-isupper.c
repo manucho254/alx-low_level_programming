@@ -10,6 +10,11 @@
 
 int _isupper(int c)
 {
+	/**
+	 * uppercase letters in ascii start from 65 to 90
+	 * * we could have also used 'A' and 'Z' in the if statetement
+	 */
+
 	if (c >= 65 && c <= 90)
 	{
 		return (1);
