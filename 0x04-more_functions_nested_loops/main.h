@@ -53,8 +53,13 @@ void more_numbers(void);
 void print_line(int n);
 
 /**
- * print_diagonal - print a diagonal line in the terminal
+ * print_diagonal - function print a diagonal line in the terminal
  */
 
 void print_diagonal(int n);
 
+/**
+ * print_square - function to print a square 
+ */
+
+void print_square(int size);
