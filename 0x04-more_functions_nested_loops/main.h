@@ -10,4 +10,4 @@ char _putchar(int ch);
  * Returns 1 if uppercase 0 if otherwise
  */
 
-int _isupper(int c)l
+int _isupper(int c);
