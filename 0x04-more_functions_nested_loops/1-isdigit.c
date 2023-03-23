@@ -8,7 +8,7 @@
  * Return: return 1 if digit else return 0
  */
 
-int _isupper(int c)
+int _isdigit(int c)
 {
 	/**
 	 * digits in ascii start from 48 to 57
