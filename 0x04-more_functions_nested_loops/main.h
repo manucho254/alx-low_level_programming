@@ -51,3 +51,10 @@ void more_numbers(void);
  */
 
 void print_line(int n);
+
+/**
+ * print_diagonal - print a diagonal line in the terminal
+ */
+
+void print_diagonal(int n);
+
