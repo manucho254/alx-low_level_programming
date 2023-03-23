@@ -11,3 +11,11 @@ char _putchar(int ch);
  */
 
 int _isupper(int c);
+
+/**
+ * _isdigit - function to check if value is a digit
+ * 
+ * Returns 1 if digit 0 if otherwise
+ */
+
+int _isdigit(int c);
