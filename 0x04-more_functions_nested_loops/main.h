@@ -63,3 +63,10 @@ void print_diagonal(int n);
  */
 
 void print_square(int size);
+
+/**
+ * print_triangle - function to print a triangle in terminal
+ */
+
+void print_triangle(int size);
+
