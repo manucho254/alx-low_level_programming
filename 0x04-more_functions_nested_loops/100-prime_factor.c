@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	long long int n = 612852475143;
+	long int n = 612852475143;
 	int x;
 
 	for (x = 2; x <= sqrt(n); x++)
@@ -24,6 +24,6 @@ int main(void)
 		}
 	}
 
-	printf("%llu\n", n);
+	printf("%lu\n", n);
 	return (n);
 }
