@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * most_numbers - function to print numbers,
+ * more_numbers - function to print numbers,
  * 0 to 14 ten times
  */
 
-void most_numbers(void)
+void more_numbers(void)
 {
 	int x;
 	int y = 0;
