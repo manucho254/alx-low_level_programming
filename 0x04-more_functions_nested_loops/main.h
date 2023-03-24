@@ -70,3 +70,8 @@ void print_square(int size);
 
 void print_triangle(int size);
 
+/**
+ * print_number - function that prints an integer in terminal 
+ */
+
+void print_number(int n);
