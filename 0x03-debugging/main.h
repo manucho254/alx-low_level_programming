@@ -19,7 +19,7 @@ int largest_number(int a, int b, int c);
  * Return: day of year
  */
 
-int convert_day(int month, int day)
+int convert_day(int month, int day);
 
 /**
  * print_remaining_days - function to check for normal and leap years
