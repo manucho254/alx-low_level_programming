@@ -1,9 +1,9 @@
 #include "main.h"
 
-int numbers_less_than_zero(int n);
-int numbers_greater_than_zero(int n);
+void numbers_less_than_zero(int n);
+void numbers_greater_than_zero(int n);
 
-/**
+/**i
  * print_number - function to print an integer,
  * in terminal using putchar
  *
@@ -26,7 +26,7 @@ void print_number(int n)
 /**
  * numbers_less_than_zero - function to print numbers less than zero
  *
- * @n: value than is less than 0
+ * @n: value that is less than 0
  */
 
 void numbers_less_than_zero(int n)
