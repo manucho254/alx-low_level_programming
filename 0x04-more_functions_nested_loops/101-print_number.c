@@ -62,6 +62,7 @@ void numbers_less_than_zero(int n)
 	}
 	else if (new >= 10000 && new <= 99999)
 	{
+		_putchar('-');
 		_putchar(((new / 1000) / 10) + '0');
 		_putchar(((new / 1000) % 10) + '0');
 		_putchar(((new / 100) % 10) + '0');
@@ -108,4 +109,4 @@ void numbers_greater_than_zero(int n)
 		_putchar(((n / 10) % 10) + '0');
 		_putchar(n % 10 + '0');
 	}
-}
+}															         }
