@@ -3,7 +3,7 @@
 void numbers_less_than_zero(int n);
 void numbers_greater_than_zero(int n);
 
-/**i
+/**
  * print_number - function to print an integer,
  * in terminal using putchar
  *
@@ -37,36 +37,36 @@ void numbers_less_than_zero(int n)
 	if (new < 10)
 	{
 		_putchar('-');
-		_putchar(n + '0');
+		_putchar(new + '0');
 	}
 	else if (new >= 10 && new <= 99)
 	{
 		_putchar('-');
-		_putchar((n / 10) + '0');
-		_putchar((n % 10) + '0');
+		_putchar((new / 10) + '0');
+		_putchar((new % 10) + '0');
 	}
 	else if (new >= 100 && new <= 999)
 	{
 		_putchar('-');
-		_putchar(((n / 10) / 10) + '0');
-		_putchar(((n / 10) % 10) + '0');
-		_putchar(n % 10 + '0');
+		_putchar(((new / 10) / 10) + '0');
+		_putchar(((new / 10) % 10) + '0');
+		_putchar(new % 10 + '0');
 	}
 	else if (new >= 1000 && new <= 9999)
 	{
 		_putchar('-');
-		_putchar(((n / 100) / 10) + '0');
-		_putchar(((n / 100) % 10) + '0');
-		_putchar(((n / 10) % 10) + '0');
-		_putchar(n % 10 + '0');
+		_putchar(((new / 100) / 10) + '0');
+		_putchar(((new / 100) % 10) + '0');
+		_putchar(((new / 10) % 10) + '0');
+		_putchar(new % 10 + '0');
 	}
-	else if (new >= 10000 && n <= 99999)
+	else if (new >= 10000 && new <= 99999)
 	{
-		_putchar(((n / 1000) / 10) + '0');
-		_putchar(((n / 1000) % 10) + '0');
-		_putchar(((n / 100) % 10) + '0');
-		_putchar(((n / 10) % 10) + '0');
-		_putchar(n % 10 + '0');
+		_putchar(((new / 1000) / 10) + '0');
+		_putchar(((new / 1000) % 10) + '0');
+		_putchar(((new / 100) % 10) + '0');
+		_putchar(((new / 10) % 10) + '0');
+		_putchar(new % 10 + '0');
 	}
 }
 
