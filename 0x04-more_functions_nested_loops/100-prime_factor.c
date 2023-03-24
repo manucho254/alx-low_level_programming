@@ -26,6 +26,6 @@ int main(void)
 		}
 	}
 
-	printf("%lu\n", k);
+	printf("%d\n", k);
 	return (0);
 }
