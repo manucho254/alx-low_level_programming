@@ -12,6 +12,7 @@ int main(void)
 {
 	long int n = 612852475143;
 	int x;
+	int k;
 
 	for (x = 2; x <= sqrt(n); x++)
 	{
@@ -19,11 +20,12 @@ int main(void)
 		{
 			while (n % x == 0)
 			{
+				k = x;
 				n = n / x;
 			}
 		}
 	}
 
-	printf("%lu\n", n);
-	return (n);
+	printf("%lu\n", k);
+	return (0);
 }
