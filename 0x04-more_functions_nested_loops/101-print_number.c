@@ -1,8 +1,5 @@
 #include "main.h"
 
-void numbers_less_than_zero(int n);
-void numbers_greater_than_zero(int n);
-
 /**
  * print_number - function to print an integer,
  * in terminal using putchar
@@ -13,20 +10,20 @@ void numbers_greater_than_zero(int n);
 
 void print_number(int n)
 {
-	double new = 0;
 	double rev_n = 0;
 
 	while (n >= 1)
 	{
-		new *= 10 + (n % 10);
+		rev_n *= 10 + (n % 10);
 		n /= 10;
 	}
 
-	while (new >= 1)
+	while (rev_n >= 1)
 	{
-		rev_n *= 10 + (n % 10);
-		new /= 10;
+		_putchar((rev_n % 10) + '0');
+		rev_n /= 10;
 	}
 
-	_putchar("%u", rev_n)
+	_putchar("%u", rev_n);
+	_putchar('')
 }
