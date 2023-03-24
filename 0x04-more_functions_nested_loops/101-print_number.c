@@ -31,7 +31,7 @@ void print_number(int n)
 		while (rev_n >= 1)
 		{
 			_putchar((rev_n % 10) + '0');
-			rev_n /= 10;
+			rev_n = rev_n / 10;
 		}
 	}
 	_putchar('\n');
