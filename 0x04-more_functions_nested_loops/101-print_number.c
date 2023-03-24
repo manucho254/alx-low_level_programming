@@ -10,20 +10,29 @@
 
 void print_number(int n)
 {
-	double rev_n = 0;
+	unsigned int rev_n = 0;
 
-	while (n >= 1)
+	if (n == 0)
 	{
-		rev_n *= 10 + (n % 10);
-		n /= 10;
+		_putchar(0 + '0');
 	}
-
-	while (rev_n >= 1)
+	else
 	{
-		_putchar((rev_n % 10) + '0');
-		rev_n /= 10;
+		if (n < 0)
+		{
+			n = n * -1;
+			_putchar('-');
+		}
+		while (n >= 1)
+		{
+			rev_n = (rev_n * 10) + (n % 10);
+			n = n / 10;
+		}
+		while (rev_n >= 1)
+		{
+			_putchar((rev_n % 10) + '0');
+			rev_n /= 10;
+		}
 	}
-
-	_putchar("%u", rev_n);
-	_putchar('')
+	_putchar('\n');
 }
