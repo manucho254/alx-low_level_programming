@@ -1,6 +1,3 @@
-#ifndef MAIN_H
-#define MAIN_H
-
 /**
  * positive_or_negative - function to find positive or negative number
  */
