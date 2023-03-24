@@ -10,8 +10,8 @@
 void positive_or_negative(int i);
 
 /**
- * function to find the largest between 3 numbers
- * Return: returns the largest integer 
+ * largest_number - function to find the largest between 3 numbers
+ * Return: returns an interg of the largest value
  */
 
 int largest_number(int a, int b, int c);
