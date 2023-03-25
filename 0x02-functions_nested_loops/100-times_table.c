@@ -42,9 +42,13 @@ void print_times_table_values(int val)
 					_putchar(' ');
 					_putchar(' ');
 				}
-				else
+				else if (times >= 10 && times <= 99)
 				{
 					_putchar(' ');
+					_putchar(' ');
+				}
+				else
+				{
 					_putchar(' ');
 				}
 			}
