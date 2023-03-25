@@ -57,7 +57,7 @@ void print_times_table_values(int val)
 			{
 				_putchar(times + '0');
 			}
-			if (y != val)
+			if (y != (val - 1))
 			{
 				_putchar(',');
 			}
