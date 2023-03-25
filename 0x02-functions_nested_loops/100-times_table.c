@@ -48,14 +48,20 @@ void print_times_table_values(int val)
 					_putchar(' ');
 				}
 			}
-			if (times > 9)
+			if (times < 10)
+			{
+				_putchar(times + '0');
+			}
+			else if (times <= 99)
 			{
 				_putchar((times / 10) + '0');
 				_putchar((times % 10) + '0');
 			}
 			else
 			{
-				_putchar(times + '0');
+				_putchar(((times / 10) / 10) + '0');
+				_putchar(((times / 10) % 10) + '0');
+				_putchar((times % 10) + '0');
 			}
 			if (y != (val - 1))
 			{
