@@ -29,9 +29,9 @@ void print_times_table_values(int val)
 	int y;
 	int times;
 
-	for (x = 0; x < val; x++)
+	for (x = 0; x <= val; x++)
 	{
-		for (y = 0; y < val; y++)
+		for (y = 0; y <= val; y++)
 		{
 			times = x * y;
 			if (y != 0)
