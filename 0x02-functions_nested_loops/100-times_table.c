@@ -63,7 +63,7 @@ void print_times_table_values(int val)
 				_putchar(((times / 10) % 10) + '0');
 				_putchar((times % 10) + '0');
 			}
-			if (y != (val - 1))
+			if (y != val)
 			{
 				_putchar(',');
 			}
