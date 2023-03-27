@@ -64,3 +64,11 @@ void rev_string(char *s);
 void puts2(char *str);
 
 
+/**
+ * puts_half - function to print half an string array in terminal
+ * @str: string array to print characters from
+ */
+
+void puts_half(char *str);
+
+
