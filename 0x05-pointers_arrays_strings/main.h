@@ -9,3 +9,11 @@
  */
 
 void reset_to_98(int *n);
+
+/**
+ * swap_int - function to swap two integers.
+ * @a: interger a to be swapped
+ * @b: integer b to be swapped
+ */
+
+void swap_int(int *a, int *b);
