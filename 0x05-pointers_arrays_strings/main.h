@@ -3,6 +3,13 @@
  */
 
 /**
+ * _putchar - function to print out a single character in terminal
+ * @ch: character to be printed 
+ */
+
+void _putchar(char ch);
+
+/**
  * reset_to_98 - function to reset value of an, 
  * int pointer and updates it to 98
  * @n: takes a pointer as an argument
