@@ -9,8 +9,9 @@
 void puts2(char *str)
 {
 	int x = 0;
+	int len = strlen(str);
 
-	while (x < strlen(str))
+	while (x < len)
 	{
 		if (x % 2 == 0)
 		{
