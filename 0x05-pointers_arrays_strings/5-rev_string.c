@@ -1,5 +1,6 @@
 #include "main.h"
 #include <string.h>
+#include <stdlib.h>
 
 /**
  * rev_string - function to reverse a string
@@ -9,8 +10,10 @@
 void rev_string(char *s)
 {
 	int len = strlen(s);
-	char tmp_arr[len];
+	char *tmp_arr = malloc(strlen(s)); /** creating a string array using malloc */
 	int x = 0;
+
+	tmp_arr = '\0'; /** adding a null pointer to the end of the array */
 
 	while (len > 0)
 	{
