@@ -20,7 +20,15 @@ void swap_int(int *a, int *b);
 
 /**
  * _strlen - function to get the length of a string
- * @s: the string pointer
+ * @s: the string array
+ * Return: integer of the string length
  */
 
 int _strlen(char *s);
+
+/**
+ * _puts - function to print a string in the terminal
+ * @str: the string array
+ */
+
+void _puts(char *str);
