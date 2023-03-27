@@ -53,3 +53,14 @@ void print_rev(char *s);
  */
 
 void rev_string(char *s);
+
+
+/**
+ * puts2 - function to print string characters in an even way,
+ * if the index is even print value
+ * @str: string array to print characters from 
+ */
+
+void puts2(char *str);
+
+
