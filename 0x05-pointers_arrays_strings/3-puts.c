@@ -29,15 +29,15 @@ int _strlen(char *s)
 	int len = 0;
 	char ch = s[0];
 
+	if (ch == '\n')
+	{
+		return (0);
+	}
+
 	while (ch != '\0')
 	{
 		ch = s[len];
 		len++;
-	}
-
-	if (len == 0)
-	{
-		return (0);
 	}
 
 	return (len - 1);

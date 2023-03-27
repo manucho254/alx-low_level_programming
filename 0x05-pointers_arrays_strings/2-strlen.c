@@ -9,16 +9,18 @@
 int _strlen(char *s)
 {
 	int len = 0;
-	char x = s[0];
+	char ch = s[0];
 
-	while (x != '\0')
-	{
-		x = s[len];
-		len++;
-	}
-	if (len == 0)
+	if (ch == '\n')
 	{
 		return (0);
 	}
+
+	while (ch != '\0')
+	{
+		ch = s[len];
+		len++;
+	}
+
 	return (len - 1);
 }
