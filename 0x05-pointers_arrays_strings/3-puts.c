@@ -31,7 +31,7 @@ int _strlen(char *s)
 
 	while (ch != '\0')
 	{
-		ch = s[x];
+		ch = s[len];
 		len++;
 	}
 
