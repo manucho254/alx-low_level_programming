@@ -8,14 +8,37 @@
 void _puts(char *str)
 {
 	int x = 0;
-	char ch = str[0];
 
-	while (ch != '\0')
+	while (x < _strlen(str))
 	{
-		ch = str[x];
-		_putchar(ch);
+		_putchar(str[x]);
 		x++;
 	}
 
 	_putchar('\n');
+}
+
+/**
+ * _strlen - function to find the length of a string
+ * @s: string array
+ * Return: int to represent the length of string
+ */
+
+int _strlen(char *s)
+{
+	int len = 0;
+	char ch = s[0];
+
+	while (ch != '\0')
+	{
+		ch = s[x];
+		len++;
+	}
+
+	if (len == 0)
+	{
+		return (0);
+	}
+
+	return (len - 1);
 }
