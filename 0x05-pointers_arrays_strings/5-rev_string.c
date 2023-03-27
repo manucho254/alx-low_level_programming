@@ -23,4 +23,5 @@ void rev_string(char *s)
 	}
 
 	strcpy(s, tmp_arr);
+	free(tmp_arr);
 }
