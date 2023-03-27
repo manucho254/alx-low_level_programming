@@ -10,10 +10,10 @@
 void rev_string(char *s)
 {
 	int len = strlen(s);
-	char *tmp_arr = malloc(strlen(s)); /** creating a string array using malloc */
+	char *tmp_arr = malloc(len + 1); /** creating a string array using malloc */
 	int x = 0;
 
-	tmp_arr = '\0'; /** adding a null pointer to the end of the array */
+	tmp_arr[len] = '\0'; /** adding a null pointer to the end of the array */
 
 	while (len > 0)
 	{
