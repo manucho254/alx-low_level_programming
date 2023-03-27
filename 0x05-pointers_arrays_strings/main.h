@@ -79,3 +79,12 @@ void puts_half(char *str);
 
 void print_array(int *a, int n);
 
+
+/**
+ * _strcpy - function like strcpy to copy a string into another,
+ * one and replace all its previous values with the new ones
+ * @dest: destination string array to copy values to
+ * @src: string array with the values to copy
+ */
+
+char *_strcpy(char *dest, char *src);
