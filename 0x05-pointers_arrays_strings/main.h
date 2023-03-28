@@ -88,3 +88,12 @@ void print_array(int *a, int n);
  */
 
 char *_strcpy(char *dest, char *src);
+
+
+/**
+ * _atoi - function to convert string to inte
+ * @s: string to get integer from
+ * Return: returns an integer from the string array
+ */
+
+int _atoi(char *s);
