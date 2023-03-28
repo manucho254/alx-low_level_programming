@@ -10,7 +10,7 @@
 
 void print_number(int n)
 {
-	unsigned int rev_n = 0;
+	unsigined int rev_n = 0;
 
 	if (n == 0)
 	{
@@ -20,18 +20,18 @@ void print_number(int n)
 	{
 		if (n < 0)
 		{
-			n *= -1;
+			n = n * -1;
 			_putchar('-');
 		}
 		while (n >= 1)
 		{
-			rev_n *= 10 + (n % 10);
+			rev_n = (rev_n * 10) + (n % 10);
 			n = n / 10;
 		}
 		while (rev_n >= 1)
 		{
 			_putchar((rev_n % 10) + '0');
-			rev_n /= 10;
+			rev_n = rev_n / 10;
 		}
 	}
 	_putchar('\n');
