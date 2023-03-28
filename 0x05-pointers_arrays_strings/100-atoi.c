@@ -43,5 +43,5 @@ int _atoi(char *s)
 		}
 	}
 
-	return (ret)
+	return (ret);
 }
