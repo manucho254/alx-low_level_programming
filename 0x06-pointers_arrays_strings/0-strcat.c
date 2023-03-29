@@ -17,6 +17,7 @@ char *_strcat(char *dest, char *src)
 	int new_len = (l_dest + l_src + 1); /**new legth of the dest array */
 	char *tmp = malloc(new_len);
 	int x = 0;
+	int y = 0;
 
 	while (x < l_dest)
 	{
@@ -24,10 +25,11 @@ char *_strcat(char *dest, char *src)
 		x++;
 	}
 
-	while (x <= l_src)
+	while (y <= l_src)
 	{
-		tmp[x] = dest[x];
+		tmp[x] = src[y];
 		x++;
+		y++;
 	}
 
 	strcpy(dest, tmp);
