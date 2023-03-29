@@ -39,6 +39,7 @@ int _strcmp(char *s1, char *s2)
 			{
 				ret = 1;
 			}
+			break;
 		}
 	}
 

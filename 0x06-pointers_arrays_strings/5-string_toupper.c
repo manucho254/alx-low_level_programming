@@ -16,9 +16,9 @@ char *string_toupper(char *str)
 
 	for (x = 0; x < len; x++)
 	{
-		if (str[x] < 'A' || s[x] > 'Z')
+		if (str[x] < 'A' || str[x] > 'Z')
 		{
-			str[x] = toupper(s[x]);
+			str[x] = toupper(str[x]);
 		}
 	}
 
