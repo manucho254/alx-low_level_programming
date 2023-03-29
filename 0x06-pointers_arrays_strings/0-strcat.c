@@ -1,7 +1,5 @@
 #include "main.h"
-#include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 
 /**
  * _strcat - function to concatenate two string array
@@ -14,25 +12,16 @@ char *_strcat(char *dest, char *src)
 {
 	int l_dest = strlen(dest); /** length of the dest string array*/
 	int l_src = strlen(src); /** length of the src string array */
-	int new_len = (l_dest + l_src + 1); /**new legth of the dest array */
-	char *tmp = malloc(new_len);
-	int x = 0;
+	int new_len = (l_dest + l_src); /**new length of the dest array */
+	int x = l_dest;
 	int y = 0;
 
-	while (x < l_dest)
+	while (x <= new_len)
 	{
-		tmp[x] = dest[x];
-		x++;
-	}
-
-	while (y <= l_src)
-	{
-		tmp[x] = src[y];
+		dest[x] = src[y];
 		x++;
 		y++;
 	}
-
-	strcpy(dest, tmp);
 
 	return (dest);
 }
