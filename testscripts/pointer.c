@@ -12,7 +12,7 @@ int main(void)
 	int *n;
 	int arr[5];
 
-	printf("size of pointer char: %d\n", sizeof(ch));
+    printf("size of pointer char: %d\n", sizeof(ch));
 	printf("size of pointer int: %d\n", sizeof(n));
 	printf("size of int arr: %d\n", sizeof(arr));
 	return (0);
