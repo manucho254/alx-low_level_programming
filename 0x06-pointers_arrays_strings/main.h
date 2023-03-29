@@ -53,7 +53,11 @@ int _strcmp(char *s1, char *s2);
 
 void reverse_array(int *a, int n);
 
-/** */
+/**
+ * *string_toupper - function to turn all lowercase letters to uppercase
+ * @str: string to convert all lowercase characters to uppercase
+ * Return: pointer representing the string array
+ */
 
 char *string_toupper(char *);
 
