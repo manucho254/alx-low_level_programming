@@ -24,11 +24,24 @@ char *_strcat(char *dest, char *src);
 
 char *_strncat(char *dest, char *src, int n);
 
-/** */
+/**
+ * *_strncpy - function to copy a string
+ * @dest: string array to add values to
+ * @src: string array to get values from
+ * @n: number of bytes to copy from @src 
+ * Return: returns a pointer to the resulting string
+ **/
 
 char *_strncpy(char *dest, char *src, int n);
 
-/** */
+/**
+ * _strcmp - function to compare two strings
+ * @s1: string array one to be compared
+ * @s2: string array two to be compared
+ * Return: returns 0 if @s1 == @s2,
+ * -1 if @s1[index] < s2[index],
+ * 1 if @s1[index] > s2[index]
+ */
 
 int _strcmp(char *s1, char *s2);
 
