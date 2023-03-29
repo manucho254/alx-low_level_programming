@@ -15,7 +15,11 @@ void _putchar(char ch);
 char *_strcat(char *dest, char *src);
 
 /**
- * *_strncat
+ * _strncat - function to concatenate two string arrays but only copy upto @n of src
+ * @dest: string array to add values to
+ * @src: string array to get values from
+ * @n: number of bytes to copy from @src
+ * Return: returns a pointer to the resulting string
  */
 
 char *_strncat(char *dest, char *src, int n);
