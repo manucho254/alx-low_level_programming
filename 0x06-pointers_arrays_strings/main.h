@@ -59,7 +59,7 @@ void reverse_array(int *a, int n);
  * Return: pointer representing the string array
  */
 
-char *string_toupper(char *);
+char *string_toupper(char *str);
 
 /**
  * cap_string - function to capitalize string array
@@ -67,4 +67,16 @@ char *string_toupper(char *);
  * Return: pointer representing string array
  */
 
-char *cap_string(char *);
+char *cap_string(char *s);
+
+
+/**
+ * leet - function that encodes a string into 1337
+ * @s: string to be encoded
+ * Return: pointer reprsnting string array
+ */
+
+char *leet(char *s);
+
+
+
