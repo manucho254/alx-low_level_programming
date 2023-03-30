@@ -4,6 +4,7 @@
  * reverse_array - function to reverse an array of integers
  * @a: array to be reversed
  * @n: number of elements in array
+ * For the solution we used swapping of values in the array
  */
 
 void reverse_array(int *a, int n)

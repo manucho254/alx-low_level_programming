@@ -13,34 +13,22 @@
 int _strcmp(char *s1, char *s2)
 {
 	int len_s1 = strlen(s1); /** length of string s1 */
-	int len_s2 = strlen(s2); /** length of string s2 */
-	int len = 0; /** this will be the length of the shortest string */
 	int ret = 0; /** the return value */
 	int x;
 
-	if (len_s1 < len_s2)
-	{
-		len = len_s1;
-	}
-	else
-	{
-		len = len_s2;
-	}
-
-	for (x = 0; x <= len; x++)
+	for (x = 0; x <= len_s1; x++)
 	{
 		if (s1[x] != s2[x])
 		{
 			if (s1[x] < s2[x])
 			{
 				ret = -1;
-				break;
 			}
 			else
 			{
 				ret = 1;
-				break;
 			}
+			break;
 		}
 	}
 
