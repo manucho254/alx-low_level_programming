@@ -32,6 +32,4 @@ void print_number(int n)
 			tmp = tmp / 10;
 		}
 	}
-
-	_putchar('\n');
 }
