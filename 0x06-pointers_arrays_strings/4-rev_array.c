@@ -9,10 +9,11 @@
 void reverse_array(int *a, int n)
 {
 	int len = (n - 1); /** number of items in array - 1 */
-	int tmp; /** temprary variable */
+	int mid = (n / 2); /** middle of the array */
+	int tmp; /** temporary variable */
 	int x;
 
-	for (x = 0; x <= (n / 2); x++)
+	for (x = 0; x <= mid; x++)
 	{
 		tmp = a[x];
 		a[x] = a[len];
