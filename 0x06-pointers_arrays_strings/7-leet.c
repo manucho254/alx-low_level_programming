@@ -1,5 +1,6 @@
 #include "main.h"
 #include <string.h>
+#include <ctype.h>
 
 /**
  * *leet - function that encodes a string array to 1337
@@ -10,29 +11,21 @@
 char *leet(char *s)
 {
 	int len = strlen(s); /** length of the string array @s */
+	char input[] = "aeotlAEOTL";
+	char output[] = "4307143071";
+	int len_input = strlen(input);
 	int x;
+	int y;
 
 	for (x = 0; x < len; x++)
 	{
-		if (s[x] == 'a' || s[x] == 'A')
+		for (y = 0; y < len_input; y++)
 		{
-			s[x] = '4';
-		}
-		if (s[x] == 'e' || s[x] == 'E')
-		{
-			s[x] = '3';
-		}
-		if (s[x] == 'o' || s[x] == 'O')
-		{
-			s[x] = '0';
-		}
-		if (s[x] == 't' || s[x] == 'T')
-		{
-			s[x] = '7';
-		}
-		if (s[x] == 'l' || s[x] == 'L')
-		{
-			s[x] = '1';
+			if (s[x] == input[y])
+			{
+				s[x] = output[y];
+				break;
+			}
 		}
 	}
 
