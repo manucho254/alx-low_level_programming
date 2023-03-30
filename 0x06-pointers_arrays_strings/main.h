@@ -71,7 +71,7 @@ char *cap_string(char *s);
 
 
 /**
- * leet - function that encodes a string into 1337
+ * *leet - function that encodes a string into 1337
  * @s: string to be encoded
  * Return: pointer reprsnting string array
  */
@@ -79,4 +79,10 @@ char *cap_string(char *s);
 char *leet(char *s);
 
 
+/**
+ * *rot13 - function that encodes string array using rot13
+ * @s: string to be encode using rot13
+ * Return: string represnting string array
+ */
 
+char *rot13(char *s);
