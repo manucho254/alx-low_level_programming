@@ -34,12 +34,13 @@ int _strcmp(char *s1, char *s2)
 			if (s1[x] < s2[x])
 			{
 				ret = -1;
+				break;
 			}
 			else
 			{
 				ret = 1;
+				break;
 			}
-			break;
 		}
 	}
 
