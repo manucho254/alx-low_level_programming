@@ -86,3 +86,11 @@ char *leet(char *s);
  */
 
 char *rot13(char *s);
+
+
+/**
+ * print_number - function to print a number in terminal
+ * @n: number to be printed
+ */
+
+void print_number(int n);
