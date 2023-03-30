@@ -12,7 +12,7 @@ void reverse_array(int *a, int n)
 	int mid = (n / 2); /** middle of the array */
 	int x;
 
-	for (x = 0; x <= mid; x++)
+	for (x = 0; x < mid; x++)
 	{
 		int tmp;
 
