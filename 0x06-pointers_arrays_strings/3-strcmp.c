@@ -13,7 +13,6 @@
 int _strcmp(char *s1, char *s2)
 {
 	int len_s1 = strlen(s1); /** length of string s1 */
-	int ret = 0; /** the return value */
 	int x;
 
 	for (x = 0; x <= len_s1; x++)
@@ -22,20 +21,18 @@ int _strcmp(char *s1, char *s2)
 		{
 			if (s1[x] < s2[x])
 			{
-				ret = -1;
+				return (-1);
 			}
 			else
 			{
-				ret = 1;
+				return (1);
 			}
-			break;
+		}
+		if (s1[x] == '\0')
+		{
+			return (0);
 		}
 	}
 
-	if (s1 == s2)
-	{
-		ret = 0;
-	}
-
-	return (ret);
+	return (0);
 }
