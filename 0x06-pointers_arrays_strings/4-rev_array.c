@@ -13,11 +13,20 @@ void reverse_array(int *a, int n)
 	int tmp; /** temporary variable */
 	int x;
 
-	for (x = 0; x <= mid; x++)
+	if (n == 2)
 	{
-		tmp = a[x];
-		a[x] = a[len];
-		a[len] = tmp;
-		len--;
+		tmp = a[0];
+		a[0] = a[1];
+		a[1] = tmp;
+	}
+	else
+	{
+		for (x = 0; x <= mid; x++)
+		{
+			tmp = a[x];
+			a[x] = a[len];
+			a[len] = tmp;
+			len--;
+		}
 	}
 }
