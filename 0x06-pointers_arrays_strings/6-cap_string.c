@@ -22,13 +22,9 @@ char *cap_string(char *s)
 					|| s[x - 1] == ',' || s[x - 1] == ';' || s[x - 1] == '.'
 					|| s[x - 1] == '!' || s[x - 1] == '?' || s[x - 1] == '"'
 					|| s[x - 1] == '(' || s[x - 1] == ')' || s[x - 1] == '{'
-					|| s[x - 1] == '}'
+					|| s[x - 1] == '}' || s[x - 1] == '\''
 					)
 			{
-				if (s[x - 1] == 9)
-				{
-					s[x - 1] = 32; /** replacing a tab character with a space */
-				}
 				s[x] = toupper(s[x]);
 			}
 		}
