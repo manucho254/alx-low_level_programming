@@ -33,7 +33,8 @@ void print_number(int n)
 	while (ret >= 1)
 	{
 		/** fmod - function to return the remainder of two doubles */
-		_putchar(fmod(ret, 10.0) + '0');
+		/** _putchar(fmod(ret, 10) + '0'); this is the solution but the*/
+		_putchar(((int)ret % 10) + '0');
 		ret = ret / 10;
 	}
 
@@ -94,8 +95,8 @@ int convert_negative_to_positive(int n)
 	else
 	{
 		n = (n * -1);
-		_putchar('-');
 	}
+	_putchar('-');
 
 	return (n);
 }
