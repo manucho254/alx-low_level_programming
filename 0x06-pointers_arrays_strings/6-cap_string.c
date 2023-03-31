@@ -10,10 +10,9 @@
 
 char *cap_string(char *s)
 {
-	int len = strlen(s);
 	int x;
 
-	for (x = 0; x < len; x++)
+	for (x = 0; s[x] != '\0'; x++)
 	{
 		if ((s[x] >= 'A' && s[x] <= 'Z') || (s[x] >= 'a' && s[x] <= 'z'))
 		{
