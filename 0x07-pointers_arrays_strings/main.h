@@ -55,3 +55,19 @@ unsigned int _strspn(char *s, char *accept);
 
 char *_strpbrk(char *s, char *accept);
 
+/**
+ * *_strstr - function that locates a substring
+ * @haystack: string to find substring @needle from
+ * @needle: substring to find in string
+ * Return: pointer to the beginning of the located substring
+ */
+
+char *_strstr(char *haystack, char *needle);
+
+/**
+ * print_chessboard - function to print a chessboard in terminal
+ * (*a)[8] - a two dimestional array
+ */
+
+void print_chessboard(char (*a)[8]);
+
