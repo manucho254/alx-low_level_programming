@@ -16,6 +16,11 @@ unsigned int _strspn(char *s, char *accept)
 	int y;
 	int j = 0;
 
+	/**
+	 * we first check if the first character,
+	 * in *s is in *accept
+	 * we the update the found value if we find it
+	 */
 	while (accept[j] != '\0')
 	{
 		if (accept[j] == first)
@@ -31,7 +36,7 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			for (y = 0; s[y] != ' ' && s[y] != '\0'; y++)
 			{
-				if (accept[x] == accept[x - 1]) /** check for dulicates */
+				if (accept[x] == accept[x - 1]) /** check for duplicates */
 				{
 					break;
 				}
