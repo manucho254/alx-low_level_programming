@@ -11,17 +11,33 @@ int main(void)
 	long int n_1 = 0, n_2 = 1;
 	long int next = n_1 + n_2;
 
-	if (n <= 2)
-	{
-		return (1);
-	}
-
 	for (x = 1; x <= 50; x++)
 	{
-		n_1 = n_2;
-		n_2 = next;
-		next = n_1 + n_2;
-		printf("%ld \n", next);
+		if (x <= 2)
+		{
+			if (x == 1)
+			{
+				printf("%ld,", 1);
+			}
+			else
+			{
+				printf(" %ld,", 1);
+			}
+		}
+		else
+		{
+			n_1 = n_2;
+			n_2 = next;
+			next = n_1 + n_2;
+			if (x == 50)
+			{
+				printf(" %ld", 1);
+			}
+			else
+			{
+				printf(" %ld,", next);
+			}
+		}
 	}
 
 	return (0);
