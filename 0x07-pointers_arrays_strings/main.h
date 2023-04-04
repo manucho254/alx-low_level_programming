@@ -71,3 +71,11 @@ char *_strstr(char *haystack, char *needle);
 
 void print_chessboard(char (*a)[8]);
 
+/**
+ * print_diagsums - that prints the sum of the ,
+ * two diagonals of a square matrix of integers.
+ * @a: array to print 
+ * @size: number of rows in multidemensional array 
+ */
+
+void print_diagsums(int *a, int size);
