@@ -8,8 +8,8 @@
 int main(void)
 {
 	int x;
-	long int n_1 = 0, n_2 = 1;
-	long int next = n_1 + n_2;
+	unsigned int n_1 = 0, n_2 = 1;
+	unsigned int next = n_1 + n_2;
 
 	for (x = 1; x <= 50; x++)
 	{
@@ -17,11 +17,11 @@ int main(void)
 		{
 			if (x == 1)
 			{
-				printf("%ld,", 1);
+				printf("%u,", 1);
 			}
 			else
 			{
-				printf(" %ld,", 1);
+				printf(" %u,", 1);
 			}
 		}
 		else
@@ -31,14 +31,15 @@ int main(void)
 			next = n_1 + n_2;
 			if (x == 50)
 			{
-				printf(" %ld", 1);
+				printf(" %u", 1);
 			}
 			else
 			{
-				printf(" %ld,", next);
+				printf(" %u,", next);
 			}
 		}
 	}
+	printf("\n");
 
 	return (0);
 }
