@@ -11,7 +11,7 @@ int main(void)
 	double n_1 = 0, n_2 = 1;
 	double next = n_1 + n_2;
 
-	for (x = 2; x <= 100; x++)
+	for (x = 2; x <= 99; x++)
 	{
 		if (x <= 2)
 		{
@@ -29,7 +29,7 @@ int main(void)
 			n_1 = n_2;
 			n_2 = next;
 			next = n_1 + n_2;
-			if (x == 100)
+			if (x == 99)
 			{
 				printf(" %.0f", next);
 			}
