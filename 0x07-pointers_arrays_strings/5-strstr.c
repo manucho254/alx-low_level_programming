@@ -33,13 +33,17 @@ char *_strstr(char *haystack, char *needle)
 				break;
 			}
 		}
+		if (strcmp(word, needle) == 0)
+		{
+			return (first);
+		}
 	}
 
-	if (strcmp(word, first) != 0)
+	if (len_n == 0)
 	{
-		return (NULL);
+		return (haystack);
 	}
 
 	free(word);
-	return (first);
+	return (NULL);
 }
