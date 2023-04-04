@@ -32,7 +32,7 @@ void print_diagsums(int *a, int size)
 		{
 			sum_bwd += a[arr_size - (size)];
 		}
-		if (y % size == 0)
+		if (y % size == 0 && y != (arr_size - size) - 1)
 		{
 			sum_bwd += a[y - (y / size)];
 		}
