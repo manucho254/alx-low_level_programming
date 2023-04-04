@@ -31,11 +31,11 @@ int main(void)
 			next = n_1 + n_2;
 			if (x == 100)
 			{
-				printf(" %f", next);
+				printf(" %.0f", next);
 			}
 			else
 			{
-				printf(" %f,", next);
+				printf(" %.0f,", next);
 			}
 		}
 	}
