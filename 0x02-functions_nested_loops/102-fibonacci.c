@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-int fib(int n);
 /**
  * main - Entry point
  * Return: always 0 if success
@@ -9,27 +8,21 @@ int fib(int n);
 int main(void)
 {
 	int x;
+	long int n_1 = 0, n_2 = 1;
+	long int next = n_1 + n_2;
 
-	for (x = 1; x <= 50; x++)
-	{
-		printf("%d \n", fib(x));
-	}
-
-	return (0);
-}
-
-/**
- * fib - function to calculate the fibonacci sequence
- * @n: number to get fibonacci sequence from
- * Return: return a fibonacci number
- */
-
-int fib(int n)
-{
 	if (n <= 2)
 	{
 		return (1);
 	}
-	
-	return(fib(n - 1) + fib(n - 2));
+
+	for (x = 1; x <= 50; x++)
+	{
+		n_1 = n_2;
+		n_2 = next;
+		next = n_1 + n_2;
+		printf("%ld \n", next);
+	}
+
+	return (0);
 }
