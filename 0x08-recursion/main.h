@@ -35,4 +35,4 @@ int factorial(int n);
  * Return: the power of number @x
  */
 
-int _pow_recursion(int x, int y)
+int _pow_recursion(int x, int y);
