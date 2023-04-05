@@ -13,10 +13,6 @@ void _puts_recursion(char *s)
 		return;
 	}
 
-	_putchar((*s)); /** print value at pointer *s */
-	s += 1; /**
-			 * increment the pointer to point to,
-			 * the next location using pointer arithmetic
-			 */
-	_puts_recursion(s);
+	_putchar((*s));
+	_puts_recursion(s + 1);
 }
