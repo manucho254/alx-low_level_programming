@@ -21,6 +21,14 @@ void _puts_recursion(char *s);
 void _print_rev_recursion(char *s);
 
 /**
+ * _strlen_recursion - function to get length of a string recusively
+ * @s: string to get length from
+ * Return: an integer representing the length of a string
+ */
+
+int _strlen_recursion(char *s);
+
+/**
  * factorial - function to calculate factorial of a given number
  * @n: number to calcute factorial of
  * Return: integer representing factorial of @n
