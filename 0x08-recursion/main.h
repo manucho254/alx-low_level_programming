@@ -27,3 +27,12 @@ void _print_rev_recursion(char *s);
  */
 
 int factorial(int n);
+
+/**
+ * _pow_recursion - function to get the power of integer @x
+ * @x: number to calculate power of
+ * @y: base to use for the calculation
+ * Return: the power of number @x
+ */
+
+int _pow_recursion(int x, int y)
