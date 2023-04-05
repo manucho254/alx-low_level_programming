@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <float.h>
 
 /**
  * main - Entry point
@@ -8,8 +9,8 @@
 int main(void)
 {
 	int x;
-	double n_1 = 0, n_2 = 1;
-	double next = n_1 + n_2;
+	float n_1 = 0, n_2 = 1;
+	float next = n_1 + n_2;
 
 	for (x = 2; x <= 99; x++)
 	{
@@ -31,11 +32,11 @@ int main(void)
 			next = n_1 + n_2;
 			if (x == 99)
 			{
-				printf(" %.0f", next);
+				printf(" %.0f", next * 1000);
 			}
 			else
 			{
-				printf(" %.0f,", next);
+				printf(" %.0f,", next * 1000);
 			}
 		}
 	}
