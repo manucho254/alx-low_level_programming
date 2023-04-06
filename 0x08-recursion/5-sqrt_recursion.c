@@ -37,5 +37,5 @@ int _sqrt_recursion(int n)
 		return (-1); /** return negative if less than 0 */
 	}
 
-	return (sqrt_recursive(n, 0)); /** start from 0 for the guess */
+	return (calculate_the_square_root(n, 0)); /** start from 0 for the guess */
 }
