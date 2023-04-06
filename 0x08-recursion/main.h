@@ -44,3 +44,13 @@ int factorial(int n);
  */
 
 int _pow_recursion(int x, int y);
+
+/**
+ * _sqrt_recursion - function to get the square root of a number
+ * @n: number to get square root of
+ * Return: integer representing the square root of @n,
+ * or -1 if @n is less than 0
+ */
+
+int _sqrt_recursion(int n);
+
