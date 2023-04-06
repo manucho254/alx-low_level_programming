@@ -20,7 +20,7 @@ int calculate_the_square_root(int n, int guess)
 	{
 		return (guess);
 	}
-	return (sqrt_recursive(n, guess + 1));
+	return (calculate_the_square_root(n, guess + 1));
 }
 
 /**
