@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 						*/
 	long int rev = 0; /** sum value stored in reverse */
 	long int tmp = 0;
+	long int val = 0;
 
 	if (argc == 1)
 	{
@@ -32,12 +33,16 @@ int main(int argc, char *argv[])
 	{
 		for (x = 1; x < argc; x++)
 		{
-			if (argv[x] != 0 && (long int)atoi(argv[x]) == 0)
+			val = (long int)atoi(argv[x]);
+			if (argv[x] != 0 && val == 0)
 			{
 				print_error();
 				return (1);
 			}
-			sum += atoi(argv[x]);
+			if (val > 0)
+			{
+				sum += val;
+			}
 		}
 		tmp = sum;
 		/**
