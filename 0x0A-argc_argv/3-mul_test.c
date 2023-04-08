@@ -63,6 +63,11 @@ int main(int argc, char *argv[])
 
 long int reverse_num(long int n, long int rev)
 {
+	if (n < 0)
+	{
+		n = n * -1;
+	}
+
 	while (n >= 1)
 	{
 		rev = (rev * 10) + (n % 10);
@@ -80,10 +85,22 @@ long int reverse_num(long int n, long int rev)
 
 void print_num(long int n, long int rev)
 {
-	while (rev >= 1)
+	if (n < 0)
 	{
-		putchar((rev % 10) + '0');
-		rev /= 10;
+		putchar('-');
+	}
+
+	if (n == 0)
+	{
+		putchar(0 + '0');
+	}
+	else
+	{
+		while (rev >= 1)
+		{
+			putchar((rev % 10) + '0');
+			rev /= 10;
+		}
 	}
 
 	/**
@@ -92,9 +109,13 @@ void print_num(long int n, long int rev)
 	 * back we using this while loop to look for zeros,
 	 * in the integer before it was reversed
 	 */
-	while (n % 10 == 0)
+
+	if (n > 0)
 	{
-		putchar(0 + '0');
-		n /= 10;
+		while (n % 10 == 0)
+		{
+			putchar(0 + '0');
+			n /= 10;
+		}
 	}
 }

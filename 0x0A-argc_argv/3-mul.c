@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 long int reverse_num(long int n, long int rev);
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
 						* multiplication of the two numbers
 						*/
 	long int rev = 0; /** multiplication value stored in reverse */
-	long int tmp = 0; /** variable to store mult before its reversed */
+	long int tmp = 0;
 
 	if (argc > 2 && argc <= 3) /** check that we have 2 arguments passed */
 	{
@@ -62,6 +63,11 @@ int main(int argc, char *argv[])
 
 long int reverse_num(long int n, long int rev)
 {
+	if (n < 0)
+	{
+		n = n * -1;
+	}
+
 	while (n >= 1)
 	{
 		rev = (rev * 10) + (n % 10);
@@ -79,10 +85,22 @@ long int reverse_num(long int n, long int rev)
 
 void print_num(long int n, long int rev)
 {
-	while (rev >= 1)
+	if (n < 0)
 	{
-		_putchar((rev % 10) + '0');
-		rev /= 10;
+		_putchar('-');
+	}
+
+	if (n == 0)
+	{
+		_putchar(0 + '0');
+	}
+	else
+	{
+		while (rev >= 1)
+		{
+			_putchar((rev % 10) + '0');
+			rev /= 10;
+		}
 	}
 
 	/**
@@ -91,9 +109,13 @@ void print_num(long int n, long int rev)
 	 * back we using this while loop to look for zeros,
 	 * in the integer before it was reversed
 	 */
-	while (n % 10 == 0)
+
+	if (n > 0)
 	{
-		_putchar(0 + '0');
-		n /= 10;
+		while (n % 10 == 0)
+		{
+			_putchar(0 + '0');
+			n /= 10;
+		}
 	}
 }
