@@ -1,6 +1,7 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
 
 long int reverse_num(long int n, long int rev);
 void print_num(long int n, long int rev);
@@ -15,7 +16,7 @@ void print_error(void);
 
 int main(int argc, char *argv[])
 {
-	int x;
+	int x, y;
 	long int sum = 0; /**
 						* variable to store the value of the,
 						* sum of the two numbers
@@ -34,12 +35,16 @@ int main(int argc, char *argv[])
 	{
 		for (x = 1; x < argc; x++)
 		{
-			val = (long int)atoi(argv[x]);
-			if (argv[x] != 0 && val == 0)
+			for (y = 0; argv[x][y] != '\0'; y++)
 			{
-				print_error();
-				return (1);
+				if (isdigit(argv[x][y]) == 0)
+				{
+					print_error();
+					return (1);
+				}
 			}
+			val = (long int)atoi(argv[x]);
+
 			if (val > 0)
 			{
 				sum += val;
@@ -141,4 +146,3 @@ void print_error(void)
 	}
 	putchar('\n');
 }
-
