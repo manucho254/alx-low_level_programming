@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 						*/
 	long int rev = 0; /** multiplication value stored in reverse */
 
-	if (argc > 2) /** check that we have 2 arguments passed */
+	if (argc > 2 && argc <= 3) /** check that we have 2 arguments passed */
 	{
 		for (x = 1; x <= 2; x++)
 		{
