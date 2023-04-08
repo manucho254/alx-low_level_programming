@@ -10,7 +10,22 @@
 
 int main(int argc, char *argv[])
 {
-	putchar(argc + '0');
+	if (argc < 10)
+	{
+		putchar(argc + '0');
+	}
+	else if (argc >= 10 && argc <= 99)
+	{
+		putchar((argc / 10) + '0');
+		putchar((argc % 10) + '0');
+	}
+	else if (argc >= 100 && argc <= 999)
+	{
+		putchar(((argc / 10) / 10) + '0');
+		putchar(((argc / 10) % 10) + '0');
+		putchar((argc % 10) + '0');
+	}
+
 	putchar('\n');
 
 	/** we cast argv to void  to tell the compiler that this will be unused*/
