@@ -1,6 +1,9 @@
 #include "main.h"
 #include <stdlib.h>
 
+long int reverse_num(long int n, long int rev);
+void print_num(long int rev);
+
 /**
  * main - Entry point function
  * @argc: number of command line arguments
@@ -24,18 +27,14 @@ int main(int argc, char *argv[])
 		{
 			mult *= atoi(argv[x]);
 		}
+		/**
+		 * We first need to reverse the integer so,
+		 * that it can be printed correctly
+		 */
 
-		while (mult >= 1)
-		{
-			rev = (rev * 10) + (mult % 10);
-			mult /= 10;
-		}
+		rev = reverse_num(mult, rev);
 
-		while (rev >= 1)
-		{
-			_putchar((rev % 10) + '0');
-			rev /= 10;
-		}
+		print_num(rev);
 	}
 	else
 	{
@@ -47,8 +46,40 @@ int main(int argc, char *argv[])
 		_putchar('\n');
 		return (1);
 	}
-	
+
 	_putchar('\n');
 
 	return (0);
+}
+
+/**
+ * reverse_num - function to reverse an integer
+ * @n: integer to be reversed
+ * @rev: variable to store the reversed integer
+ * Return: @n reversed
+ */
+
+long int reverse_num(long int n, long int rev)
+{
+	while (n >= 1)
+	{
+		rev = (rev * 10) + (n % 10);
+		n /= 10;
+	}
+
+	return (rev);
+}
+
+/**
+ * print_num - function to print a number in terminal
+ * @rev: number to be printed in terminal
+ */
+
+void print_num(long int rev)
+{
+	while (rev >= 1)
+	{
+		_putchar((rev % 10) + '0');
+		rev /= 10;
+	}
 }
