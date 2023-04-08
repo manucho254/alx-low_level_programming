@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
 	if (argc > 2) /** check that we have 2 arguments passed */
 	{
-		for (x = 1; x < argc; x++)
+		for (x = 1; x <= 2; x++)
 		{
 			mult *= atoi(argv[x]);
 		}
