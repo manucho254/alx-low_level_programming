@@ -10,6 +10,7 @@
 
 int main(int argc, char *argv[])
 {
+	argc -= 1;
 	if (argc < 10)
 	{
 		putchar(argc + '0');

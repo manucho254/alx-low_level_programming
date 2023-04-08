@@ -9,6 +9,7 @@
 
 int main(int argc, char *argv[])
 {
+	argc -= 1;
 	if (argc < 10)
 	{
 		_putchar(argc + '0');
