@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 long int reverse_num(long int n, long int rev);
-void print_num(long int rev);
+void print_num(long int n, long int rev);
 
 /**
  * main - Entry point function
@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 						* multiplication of the two numbers
 						*/
 	long int rev = 0; /** multiplication value stored in reverse */
+	long int tmp = 0; /** variable to store mult before its reversed */
 
 	if (argc > 2 && argc <= 3) /** check that we have 2 arguments passed */
 	{
@@ -27,6 +28,7 @@ int main(int argc, char *argv[])
 		{
 			mult *= atoi(argv[x]);
 		}
+		tmp = mult;
 		/**
 		 * We first need to reverse the integer so,
 		 * that it can be printed correctly
@@ -34,7 +36,10 @@ int main(int argc, char *argv[])
 
 		rev = reverse_num(mult, rev);
 
-		print_num(rev);
+		print_num(tmp, rev);
+
+		_putchar('\n');
+		return (0);
 	}
 	else
 	{
@@ -46,10 +51,6 @@ int main(int argc, char *argv[])
 		_putchar('\n');
 		return (1);
 	}
-
-	_putchar('\n');
-
-	return (0);
 }
 
 /**
@@ -72,14 +73,27 @@ long int reverse_num(long int n, long int rev)
 
 /**
  * print_num - function to print a number in terminal
+ * @n: number before its reversed
  * @rev: number to be printed in terminal
  */
 
-void print_num(long int rev)
+void print_num(long int n, long int rev)
 {
 	while (rev >= 1)
 	{
 		_putchar((rev % 10) + '0');
 		rev /= 10;
+	}
+
+	/**
+	 * If a number had zeros at the end when we,
+	 * reverse we loose the zeros, to add the zeros,
+	 * back we using this while loop to look for zeros,
+	 * in the integer before it was reversed
+	 */
+	while (n % 10 == 0)
+	{
+		_putchar(0 + '0');
+		n /= 10;
 	}
 }
