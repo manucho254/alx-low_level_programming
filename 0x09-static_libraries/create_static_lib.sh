@@ -1,3 +1,11 @@
 #!/bin/bash
 
-gcc -c -Wall -Werror -Wextra *.c | ar rc liball.a *.o | ranlib liball.a \
+# create objects
+gcc -c -Wall -Werror -Wextra *.c
+
+# create a library archive
+
+ar rc liball.a *.o
+
+# update archive index
+ranlib liball.a
