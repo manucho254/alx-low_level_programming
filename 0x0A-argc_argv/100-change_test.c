@@ -106,10 +106,17 @@ int reverse_integer(int num, int rev)
 
 void print_integer(int tmp, int rev)
 {
-	while (rev >= 1)
+	if (rev == 0)
 	{
-		putchar((rev % 10) + '0');
-		rev = rev / 10;
+		putchar(0 + '0');
+	}
+	else
+	{
+		while (rev >= 1)
+		{
+			putchar((rev % 10) + '0');
+			rev = rev / 10;
+		}
 	}
 
 	if (tmp > 0)
