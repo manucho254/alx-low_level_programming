@@ -3,6 +3,7 @@
 
 int check_width_and_height(int height, int width);
 int **populate_grid(int **grid, int height, int width);
+void free_arr(int **arr, int height);
 
 /**
  * **alloc_grid - function that returns a pointer to a ,
@@ -27,11 +28,11 @@ int **alloc_grid(int width, int height)
 	}
 
 	/** Memory allocation for **arr of size height*/
-	arr = malloc(sizeof(int) * height * width);
+	arr = malloc(sizeof(int) * (height * width));
 
 	if (arr == NULL)
 	{
-		free_grid(arr, height);
+		free_arr(arr, height);
 		return (NULL);
 	}
 
@@ -87,18 +88,18 @@ int **populate_grid(int **grid, int height, int width)
 }
 
 /**
- * free_grid - function to free a two dimensional array
+ * free_arr - function to free a two dimensional array
  * @arr: 2 dimensional array to be freed
  * @height: height of the two dimensional array
  */
 
-void free_grid(int **arr, int height)
+void free_arr(int **arr, int height)
 {
 	int k;
 
-	for (k = 0;  k < height; k++)
+	for (k = 0; k < height; k++)
 	{
-		free(*(arr + k));
+		free(arr[k]);
 	}
 	free(arr);
 }
