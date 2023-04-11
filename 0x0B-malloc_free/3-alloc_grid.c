@@ -51,17 +51,16 @@ int **populate_grid(int **grid, int height, int width)
 	/** pointer to hold the values of the inner array of size width */
 	int *inner;
 
+	if (grid == NULL && grid[0] == NULL)
+	{
+		free_arr(grid, height);
+		return (NULL);
+	}
+
 	for (x = 0; x < height; x++)
 	{
 		/** memory allocation of inner of size width */
 		inner = malloc(sizeof(int) * width);
-
-		if (*grid == NULL || inner == NULL)
-		{
-			free(inner);
-			free_arr(grid, height);
-			return (NULL);
-		}
 
 		for (y = 0; y < width; y++)
 		{
