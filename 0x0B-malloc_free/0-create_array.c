@@ -21,7 +21,7 @@ char *create_array(unsigned int size, char c)
 		s[x] = c;
 	}
 
-	if (size == 0)
+	if (size == 0 || s == NULL)
 	{
 		return (NULL);
 	}
