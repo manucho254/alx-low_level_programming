@@ -23,7 +23,7 @@ char *str_concat(char *s1, char *s2)
 	/** allocate memory of size_s3 to s3*/
 	s3 = malloc(sizeof(char) * (size_s3 + 1));
 
-	if (!s3)
+	if (s3 == NULL)
 	{
 		return (NULL);
 	}
@@ -40,6 +40,12 @@ char *str_concat(char *s1, char *s2)
 	}
 	if (s2)
 	{
+		/** check if s1 is equal to none and change the value of x to 0*/
+		if (s1 == NULL)
+		{
+			x = 0;
+		}
+
 		/** add data from s2 to s3 */
 		for (y = 0; s2[y] != '\0'; y++)
 		{
