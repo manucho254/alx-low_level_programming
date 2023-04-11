@@ -22,7 +22,7 @@ int **alloc_grid(int width, int height)
 	int x, y;
 
 	/** Memory allocation for **arr of size height*/
-	arr = malloc(sizeof(int) * height);
+	arr = malloc(sizeof(int) * height * width);
 
 	for (x = 0; x < height; x++)
 	{
@@ -31,13 +31,9 @@ int **alloc_grid(int width, int height)
 
 		if (arr == NULL || inner == NULL)
 		{
-			free(inner);
-			free(arr);
+			_free_grid(arr, height);
 			return (NULL);
 		}
-
-		/** memory allocation of inner of size width */
-		inner = malloc(sizeof(int) * width);
 
 		for (y = 0; y < width; y++)
 		{
@@ -57,3 +53,20 @@ int **alloc_grid(int width, int height)
 
 	return (arr);
 }
+
+/**
+ * _free_grid - function to free a two dimensional array
+ * @arr: 2 dimensional array to be freed
+ * @height: height of the two dimensional array
+ */
+
+void _free_grid(int **arr, int height)
+{
+	int k;
+
+	for (k = 0;  k < height; k++)
+	{
+		free(*(arr + k));
+	}
+}
+
