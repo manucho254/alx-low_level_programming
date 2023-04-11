@@ -100,6 +100,7 @@ void free_grid(int **arr, int height)
 	{
 		free(*(arr + k));
 	}
+	free(arr);
 }
 
 /**
