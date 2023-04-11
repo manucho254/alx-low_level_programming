@@ -31,7 +31,7 @@ int **alloc_grid(int width, int height)
 
 		if (arr == NULL || inner == NULL)
 		{
-			_free_grid(arr, height);
+			free_grid(arr, height);
 			return (NULL);
 		}
 
@@ -55,12 +55,12 @@ int **alloc_grid(int width, int height)
 }
 
 /**
- * _free_grid - function to free a two dimensional array
+ * free_grid - function to free a two dimensional array
  * @arr: 2 dimensional array to be freed
  * @height: height of the two dimensional array
  */
 
-void _free_grid(int **arr, int height)
+void free_grid(int **arr, int height)
 {
 	int k;
 
