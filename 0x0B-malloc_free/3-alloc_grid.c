@@ -60,7 +60,13 @@ int **populate_grid(int **grid, int height, int width)
 	for (x = 0; x < height; x++)
 	{
 		/** memory allocation of inner of size width */
-		inner = malloc(sizeof(int) * width);
+		inner = (int *)malloc(sizeof(int) * width);
+
+		if (inner == NULL)
+		{
+			free(inner);
+			return (NULL);
+		}
 
 		for (y = 0; y < width; y++)
 		{
