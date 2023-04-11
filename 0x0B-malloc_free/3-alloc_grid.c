@@ -20,9 +20,6 @@ int **alloc_grid(int width, int height)
 	 * the address of another pointer
 	 */
 	int **arr;
-	/** pointer to hold the values of the inner array of size width */
-	int *inner;
-	int x, y;
 
 	if (check_width_and_height(height, width) == 0)
 	{
@@ -49,6 +46,10 @@ int **alloc_grid(int width, int height)
 
 int **populate_grid(int **grid, int height, int width)
 {
+	int x, y;
+	/** pointer to hold the values of the inner array of size width */
+	int *inner;
+
 	for (x = 0; x < height; x++)
 	{
 		/** memory allocation of inner of size width */
