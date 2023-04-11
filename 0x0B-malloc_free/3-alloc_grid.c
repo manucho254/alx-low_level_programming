@@ -26,8 +26,13 @@ int **alloc_grid(int width, int height)
 
 	for (x = 0; x < height; x++)
 	{
+		/** memory allocation of inner of size width */
+		inner = malloc(sizeof(int) * width);
+
 		if (arr == NULL || inner == NULL)
 		{
+			free(inner);
+			free(arr);
 			return (NULL);
 		}
 
