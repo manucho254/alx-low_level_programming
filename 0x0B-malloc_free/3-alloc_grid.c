@@ -28,7 +28,7 @@ int **alloc_grid(int width, int height)
 	}
 
 	/** Memory allocation for **arr of size height*/
-	arr = malloc(sizeof(int) * (height * width));
+	arr = (int **)malloc(sizeof(int *) * height);
 
 	arr = populate_grid(arr, height, width);
 
@@ -51,7 +51,7 @@ int **populate_grid(int **grid, int height, int width)
 	/** pointer to hold the values of the inner array of size width */
 	int *inner;
 
-	if (grid == NULL && grid[0] == NULL)
+	if (grid == NULL)
 	{
 		free_arr(grid, height);
 		return (NULL);
