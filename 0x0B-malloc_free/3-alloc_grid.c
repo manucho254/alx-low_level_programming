@@ -63,7 +63,7 @@ int **populate_grid(int **grid, int height, int width)
 
 		if (grid[x] == NULL)
 		{
-			free_arr(arr, height);
+			free_arr(grid, height);
 			return (NULL);
 		}
 
@@ -73,14 +73,8 @@ int **populate_grid(int **grid, int height, int width)
 			 * initializing the inner array with value 0,
 			 * with value 0 for all indexes
 			 */
-			*(inner + y) = 0;
+			*(grid[x] + y) = 0;
 		}
-
-		/**
-		 * pointer arithmetic so that our pointer to pointer,
-		 * store the adresses of inner at arr[x]
-		 */
-		*(grid + x) = inner;
 	}
 
 	return (grid);
