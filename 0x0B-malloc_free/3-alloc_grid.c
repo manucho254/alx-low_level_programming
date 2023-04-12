@@ -22,10 +22,15 @@ int **alloc_grid(int width, int height)
 	 */
 	int **arr;
 
-	/** Memory allocation for **arr of size height*/
-	arr = (int **)malloc(sizeof(int *) * height);
+	if (check_width_and_height(height, width) == 0)
+	{
+		return (NULL);
+	}
 
-	if (check_width_and_height(height, width) == 0 || arr == NULL)
+    /** Memory allocation for **arr of size height*/
+	arr = malloc(sizeof(int *) * height);
+
+	if (arr == NULL)
 	{
 		free_arr(arr, height);
 		return (NULL);
@@ -55,7 +60,7 @@ int **populate_grid(int **grid, int height, int width)
 	for (x = 0; x < height; x++)
 	{
 		/** memory allocation of inner of size width */
-		inner = (int *)malloc(sizeof(int) * width);
+		inner = malloc(sizeof(int) * width);
 
 		if (inner == NULL)
 		{
