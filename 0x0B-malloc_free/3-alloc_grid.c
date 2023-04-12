@@ -22,15 +22,10 @@ int **alloc_grid(int width, int height)
 	 */
 	int **arr;
 
-	if (check_width_and_height(height, width) == 0)
-	{
-		return (NULL);
-	}
-
 	/** Memory allocation for **arr of size height*/
 	arr = (int **)malloc(sizeof(int *) * height);
 
-	if (arr == NULL)
+	if (check_width_and_height(height, width) == 0 || arr == NULL)
 	{
 		free_arr(arr, height);
 		return (NULL);
