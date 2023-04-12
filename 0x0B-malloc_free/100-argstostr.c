@@ -33,7 +33,7 @@ char *argstostr(int ac, char **av)
 		new_len += 1;
 	}
 	/** allocate memory to str of size new_len + 1*/
-	str = (char *) malloc(sizeof(char) * (new_len));
+	str = (char *) malloc(sizeof(char) * (new_len + 1));
 	if (str == NULL)
 	{
 		return (NULL);
