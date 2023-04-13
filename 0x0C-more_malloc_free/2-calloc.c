@@ -10,8 +10,8 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *s;
-	unsigned int n_size;
+	char *s;
+	unsigned int x, n_size;
 
 	if (nmemb == 0 || size == 0)
 	{
@@ -26,6 +26,13 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		/** check if malloc fails */
 		return (NULL);
+	}
+
+	s[n_size] = '\0';
+
+	for (x = 0; x < nmemb; x++)
+	{
+		s[x] = 0;
 	}
 
 	return (s);
