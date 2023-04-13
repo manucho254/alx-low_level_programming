@@ -57,7 +57,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 
 		/** add data from s2 to s3 */
-		for (y = 0; y < n; y++)
+		for (y = 0; y <= n; y++)
 		{
 			s3[x] = s2[y];
 			x++;
