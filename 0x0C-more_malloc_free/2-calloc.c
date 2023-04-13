@@ -29,12 +29,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
-	if (size == 1)
-	{
-		s[n_size] = '\0';
-	}
-
-	for (x = 0; x < nmemb; x++)
+	for (x = 0; x <= nmemb; x++)
 	{
 		s[x] = 0;
 	}
