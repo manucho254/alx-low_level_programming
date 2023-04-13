@@ -13,7 +13,7 @@ int *array_range(int min, int max)
 	int *n_arr; /** pointer to integer array */
 	int x, new_size, y = 0;
 
-	if (min > max)
+	if (min > max || max == 0)
 	{
 		/** check if min is greater than max */
 		return (NULL);
