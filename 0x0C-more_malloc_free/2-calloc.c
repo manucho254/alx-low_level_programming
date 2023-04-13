@@ -20,7 +20,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 
 	tmp = &size;
-	n_size = (nmemb * sizeof(tmp));
+	n_size = ((nmemb + 1) * sizeof(tmp));
 	s = malloc(n_size); /** allocating memory using malloc*/
 
 	if (s == NULL)
