@@ -11,7 +11,7 @@
 int *array_range(int min, int max)
 {
 	int *n_arr; /** pointer to integer array */
-	int x, y = 0;
+	int x, new_size, y = 0;
 
 	if (min > max)
 	{
@@ -19,12 +19,14 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
-	n_arr = malloc(sizeof(int *) * max + 1);
+	new_size = (sizeof(int *) * max);
+	n_arr = malloc(new_size);
 
 	if (n_arr == NULL)
 	{
 		return (NULL);
 	}
+
 
 	for (x = min; x <= max; x++)
 	{
