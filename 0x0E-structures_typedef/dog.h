@@ -2,7 +2,14 @@
 #define dog_h__
 #include <float.h>
 
-struct dog 
+/**
+ * struct dog - structure for a dog
+ * @name: name of the dog
+ * @age: the age of the dog
+ * @owner: the owner of the dog
+ */
+
+struct dog
 {
 	char *name;
 	float age;
@@ -11,4 +18,5 @@ struct dog
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
+
 #endif
