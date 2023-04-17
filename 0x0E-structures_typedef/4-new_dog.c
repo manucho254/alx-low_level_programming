@@ -17,6 +17,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t nice_dog, *p;
 	int len_name = 0;
 	int len_owner = 0;
+	char *new_name, *new_owner;
 
 	if (name != NULL)
 	{
@@ -27,9 +28,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 		len_owner = strlen(owner);
 	}
 
-	nice_dog.name = copy_string(name, len_name);
-	nice_dog.age = age;
-	nice_dog.owner = copy_string(owner, len_owner);
+	new_name = copy_string(name, len_name);
+	new_owner = copy_string(owner, len_owner);
+
+	if (new_name == NULL || new_owner == NULL)
+	{
+		return (NULL);
+	}
+	else
+	{
+		nice_dog.name = new_name;
+		nice_dog.age = age;
+		nice_dog.owner = new_owner;
+	}
 
 	p = &nice_dog; /** pointer to object of type dog_t */
 
