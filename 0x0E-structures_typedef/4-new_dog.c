@@ -14,22 +14,17 @@ char *copy_string(char *str, int len);
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	/** creating a new variable of type dog_t*/
-	dog_t nice_dog, *p;
-	int len_name = 0;
-	int len_owner = 0;
+	dog_t *nice_dog;
+	int len_name = strlen(name);
+	int len_owner = strlen(owner);
 	char *new_name, *new_owner;
 
-	if (name != NULL)
-	{
-		len_name = strlen(name);
-	}
-	if (owner != NULL)
-	{
-		len_owner = strlen(owner);
-	}
+	nice_dog = malloc(sizeof(dog_t));
 
-	if (owner == NULL || name == NULL)
+	if (nice_dog == NULL)
+	{
 		return (NULL);
+	}
 
 	new_name = copy_string(name, len_name);
 	new_owner = copy_string(owner, len_owner);
@@ -40,14 +35,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 	{
-		nice_dog.name = new_name;
-		nice_dog.age = age;
-		nice_dog.owner = new_owner;
+		nice_dog->name = new_name;
+		nice_dog->age = age;
+		nice_dog->owner = new_owner;
 	}
 
-	p = &nice_dog; /** pointer to object of type dog_t */
+	/** pointer to object of type dog_t */
 
-	return (p);
+	return (nice_dog);
 }
 
 /**
