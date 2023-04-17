@@ -11,17 +11,11 @@
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	char nil[] = "nil";
-
+	if (d == NULL)
+	{
+		return;
+	}
 	/** method two on initializing a variable of type dog */
-	if (name == NULL)
-	{
-		name = nil;
-	}
-	if (owner == NULL)
-	{
-		owner = nil;
-	}
 	(*d).name = name;
 	(*d).age = age;
 	(*d).owner = owner;
