@@ -10,7 +10,6 @@
 void print_dog(struct dog *d)
 {
 	char nil[] = "(nil)";
-	float NAN = 0.0/0.0;
 
 	if (d == NULL)
 	{
