@@ -4,6 +4,7 @@
 
 /**
  * main - function to print the name of the file it was compiled from
+ * Return: always 0 if success
  */
 int main(void)
 {
