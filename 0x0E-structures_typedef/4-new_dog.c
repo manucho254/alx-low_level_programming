@@ -1,6 +1,14 @@
 #include "dog.h"
 #include <stdlib.h>
 
+/**
+ * dog_t *new_dog - function that creates a new dog
+ * @name: pointer to dogs name
+ * @age: age of the dog
+ * @owner: pointer to the owner of the dog
+ * Return: pointer refrencing varible of type dog_t
+ */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	/** creating a new variable of type dog_t*/
