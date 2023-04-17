@@ -29,16 +29,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_name = copy_string(name, len_name);
 	new_owner = copy_string(owner, len_owner);
 
-	if (new_name == NULL || new_owner == NULL)
-	{
-		return (NULL);
-	}
-	else
-	{
-		nice_dog->name = new_name;
-		nice_dog->age = age;
-		nice_dog->owner = new_owner;
-	}
+	nice_dog->name = new_name;
+	nice_dog->age = age;
+	nice_dog->owner = new_owner;
 
 	/** pointer to object of type dog_t */
 
