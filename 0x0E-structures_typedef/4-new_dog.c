@@ -22,7 +22,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	nice_dog->name = malloc(strlen(name));
+	nice_dog->name = malloc(strlen(name) + 1);
 
 	if (nice_dog->name == NULL)
 	{
@@ -31,7 +31,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/** copying name into nice_dog->name */
 	strcpy(nice_dog->name, name);
 
-	nice_dog->owner = malloc(strlen(owner));
+	nice_dog->age = age;
+
+	nice_dog->owner = malloc(strlen(owner) + 1);
 
 	if (nice_dog->owner == NULL)
 	{
@@ -39,7 +41,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	/** copying owner into nice_dog->owner */
 	strcpy(nice_dog->owner, owner);
-	nice_dog->age = age;
 
 	/** pointer to object of type dog_t */
 
