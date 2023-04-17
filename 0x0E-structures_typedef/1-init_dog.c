@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <float.h>
 
 /**
  * init_dog - function to initialize variable of type dog

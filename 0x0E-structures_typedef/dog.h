@@ -1,6 +1,5 @@
 #ifndef dog_h__
 #define dog_h__
-#include <float.h>
 
 /**
  * struct dog - structure for a dog
