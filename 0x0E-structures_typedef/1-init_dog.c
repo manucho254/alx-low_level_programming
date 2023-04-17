@@ -10,8 +10,13 @@
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	/** we could have also use (*d).variable = to initialize*/
+	/** method one on initializing a variable of type dog */
 	d->name = name;
 	d->age = age;
 	d->owner = owner;
+
+	/** method two on initializing a variable of type dog */
+	(*d).name = name;
+	(*d).age = age;
+	(*d).owner = owner;
 }
