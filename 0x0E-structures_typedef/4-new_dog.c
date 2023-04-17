@@ -28,6 +28,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 		len_owner = strlen(owner);
 	}
 
+	if (owner == NULL || name == NULL)
+		return (NULL);
+
 	new_name = copy_string(name, len_name);
 	new_owner = copy_string(owner, len_owner);
 
