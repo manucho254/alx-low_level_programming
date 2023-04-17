@@ -49,6 +49,12 @@ char *copy_string(char *str, int len)
 	int x;
 
 	s = malloc(sizeof(char) * len);
+
+	if (s == NULL)
+	{
+		return (NULL);
+	}
+
 	s[len] = '\0';
 
 	for (x = 0; x < len; x++)
