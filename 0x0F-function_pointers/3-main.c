@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 /**
  * main - main function
@@ -13,6 +14,7 @@
 int main(int argc, char *argv[])
 {
 	int num_a, num_b;
+	bool check;
 
 	if (argc != 4)
 	{
@@ -24,8 +26,9 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	if (strcmp(argv[3], "0") == 0 && \
-			(strcmp(argv[2], "/") == 0 || strcmp(argv[2], "%") == 0))
+
+	check = (strcmp(argv[2], "/") == 0 || strcmp(argv[2], "%") == 0);
+	if (strcmp(argv[3], "0") == 0 && check)
 	{
 		printf("Error\n");
 		exit(100);
