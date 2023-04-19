@@ -1,6 +1,7 @@
 #include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * main - main function
@@ -23,7 +24,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	if (argv[3] == 0)
+	if (strcmp(argv[3], "0") == 0)
 	{
 		printf("Error\n");
 		exit(100);
