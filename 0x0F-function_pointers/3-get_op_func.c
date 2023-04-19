@@ -29,5 +29,6 @@ int (*get_op_func(char *op))(int, int)
 		}
 		i++;
 	}
+
 	return (NULL);
 }
