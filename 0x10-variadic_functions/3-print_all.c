@@ -17,24 +17,25 @@ void print_all(const char * const format, ...)
 	x = 0;
 	while (format[x] != '\0')
 	{
-		if (format[x] == 'c')
+		switch (format[x])
 		{
-			/** chars are converted to int */
-			printf("%c", va_arg(args, int));
+			case 'c':
+				printf("%c", va_arg(args, int));
+				break;
+			case 'i':
+				printf("%d", va_arg(args, int));
+				break;
+			case 'f':
+				printf("%f", va_arg(args, double));
+				break;
+			case 's':
+				string = va_arg(args, char *);
+				printf("%s", string != NULL ? string : "(nil)");
+				break;
+			default:
+				break;
 		}
-		else if (format[x] == 'i')
-		{
-			printf("%d", va_arg(args, int));
-		}
-		else if (format[x] == 'f')
-		{
-			printf("%f", va_arg(args, double));
-		}
-		else if (format[x] == 's')
-		{
-			string = va_arg(args, char *);
-			printf("%s", string != NULL ? string : "(nil)");
-		}
+
 		if (x != '\0' && format[x + 1] != '\0')
 		{
 			printf(", ");
