@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 		num_a = atoi(argv[1]);
 		num_b = atoi(argv[3]);
 
-		printf("%d \n", get_op_func(argv[2])(num_a, num_b));
+		printf("%d\n", get_op_func(argv[2])(num_a, num_b));
 	}
 
 	return (0);
