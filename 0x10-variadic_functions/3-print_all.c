@@ -15,6 +15,7 @@ void print_all(const char * const format, ...)
 
 	if (format == NULL)
 	{
+		printf("\n");
 		return;
 	}
 	va_start(args, format);
@@ -39,7 +40,6 @@ void print_all(const char * const format, ...)
 			default:
 				break;
 		}
-
 		if (x != '\0' && format[x + 1] != '\0')
 		{
 			printf(", ");
