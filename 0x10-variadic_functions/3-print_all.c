@@ -1,6 +1,7 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * print_all - function that prints anything
@@ -9,12 +10,11 @@
 
 void print_all(const char * const format, ...)
 {
-	unsigned int x;
 	va_list args;
+	unsigned int x;
 	char *string;
 
 	va_start(args, format);
-
 	x = 0;
 	while (format[x] != '\0')
 	{
@@ -42,7 +42,6 @@ void print_all(const char * const format, ...)
 		}
 		x++;
 	}
-
 	va_end(args);
 	printf("\n");
 }
