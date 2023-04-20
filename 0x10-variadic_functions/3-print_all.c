@@ -13,10 +13,9 @@ void print_all(const char * const format, ...)
 	unsigned int x;
 	char *string;
 
-
+	va_start(args, format);
 	if (format)
 	{
-		va_start(args, format);
 		x = 0;
 		while (format[x] != '\0')
 		{
