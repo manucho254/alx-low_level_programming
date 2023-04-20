@@ -11,6 +11,7 @@ void print_all(const char * const format, ...)
 {
 	unsigned int x;
 	va_list args;
+	char *string;
 
 	va_start(args, format);
 
@@ -32,7 +33,8 @@ void print_all(const char * const format, ...)
 		}
 		else if (format[x] == 's')
 		{
-			printf("%s", va_arg(args, char *));
+			string = va_arg(args, char *);
+			printf("%s", string != NULL ? string : "(nil)");
 		}
 		if (x != '\0' && format[x + 1] != '\0')
 		{
