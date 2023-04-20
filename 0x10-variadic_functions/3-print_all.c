@@ -34,8 +34,6 @@ void print_all(const char * const format, ...)
 					string = va_arg(args, char *);
 					printf("%s", string != NULL ? string : "(nil)");
 					break;
-				default:
-					break;
 			}
 			if (x != '\0' && format[x + 1] != '\0')
 			{
