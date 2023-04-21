@@ -10,8 +10,8 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	unsigned int x;
-	char *string;
+	int x;
+	char *s;
 
 	va_start(args, format);
 	if (format)
@@ -31,11 +31,11 @@ void print_all(const char * const format, ...)
 					printf("%f", va_arg(args, double));
 					break;
 				case 's':
-					string = va_arg(args, char *);
-					printf("%s", string != NULL ? string : "(nil)");
+					s = va_arg(args, char *);
+					printf("%s", s != NULL ? s : "(nil)");
 					break;
 			}
-			if (x != '\0' && format[x + 1] != '\0')
+			if (format[x + 1] != '\0')
 			{
 				printf(", ");
 			}
