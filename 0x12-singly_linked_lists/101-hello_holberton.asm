@@ -24,4 +24,3 @@ _start:
 
   mov ebx, 0      ; normal-exit code
   mov eax, 1      ; process-termination service
-  ret
