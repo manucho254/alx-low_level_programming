@@ -1,8 +1,8 @@
    SECTION .data
 message: db  "Hello, Holberton", 0
-fmt: db "%s", 10, 0
+fmt: db "%s", 10
 new_line: db "\n", 0
-fmt2: db "%c", 1, 0
+fmt2: db "%c", 13, 0
 
    SECTION .text
    extern printf
@@ -22,6 +22,4 @@ _start:
   ; call printf
   call printf
 
-  mov ebx, 0 ;normal-exit code
-  mov eax, 1 ;process termination service
-  int 0x80  ;linux kernel service
+  ret
