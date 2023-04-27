@@ -22,8 +22,11 @@ list_t *add_node(list_t **head, const char *str)
 	}
 
 	/** add value to new->str */
-	new->str = strdup(str);
-	new->len = strlen(new->str);
+	if (str != NULL)
+	{
+		new->str = strdup(str);
+		new->len = strlen(new->str);
+	}
 	/** make new->next point to the pointer of *head */
 	new->next = (*head);
 	(*head) = new;
