@@ -14,11 +14,6 @@ list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new, *last;
 
-	if (head == NULL)
-	{
-		return (NULL);
-	}
-
 	/** allocate memory for pointer new of type list_t */
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
@@ -32,12 +27,6 @@ list_t *add_node_end(list_t **head, const char *str)
 	new->str = strdup(str);
 	new->len = strlen(new->str);
 	new->next = NULL;
-
-	if ((*head) == NULL)
-	{
-		(*head) = new;
-		return (NULL);
-	}
 
 	while (last->next != NULL)
 	{
