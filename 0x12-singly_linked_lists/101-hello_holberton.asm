@@ -1,6 +1,6 @@
    SECTION .data
 message: db  "Hello, Holberton", 0
-fmt: db "%s", 10
+fmt: db "%s", 10, 0
 new_line: db "\n", 0
 fmt2: db "%c", 13, 0
 
@@ -23,4 +23,4 @@ _start:
   call printf
 
   mov ebx, 0      ; normal-exit code
-  mov eax, 1      ; process-termination service
+  mov eax, 0      ; process-termination service
