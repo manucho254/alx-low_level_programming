@@ -23,4 +23,3 @@ _start:
   call printf
 
   mov ebx, 0      ; normal-exit code
-  mov eax, 0      ; process-termination service
