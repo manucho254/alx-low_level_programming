@@ -8,14 +8,12 @@
 
 void free_list(list_t *head)
 {
-	/**
-	 * check that next is not null and,
-	 * recursively call the function again
-	 */
-	if (head->next)
+	while (head != NULL)
 	{
-		free_list(head->next);
+		list_t *tmp = head;
+
+		head = head->next;
+		free(tmp->str);
+		free(tmp);
 	}
-	free(head->str);
-	free(head);
 }
