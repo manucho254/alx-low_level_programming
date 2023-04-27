@@ -2,13 +2,17 @@
 #include <stdlib.h>
 
 /**
- * print_list - function to free linked list
+ * free_list - function to free linked list
  * @head: pointer to linked list
  */
 
 void free_list(list_t *head)
 {
-	if(head->next)
+	/**
+	 * check that next is not null and,
+	 * recursively call the function again
+	 */
+	if (head->next)
 	{
 		free_list(head->next);
 	}
