@@ -27,9 +27,13 @@ list_t *add_node(list_t **head, const char *str)
 		new->str = strdup(str);
 		new->len = strlen(new->str);
 	}
-	/** make new->next point to the pointer of *head */
-	new->next = (*head);
-	(*head) = new;
+	if (head)
+	{
+		/** make new->next point to the pointer of *head */
+		new->next = (*head);
+		(*head) = new;
+		return (new);
+	}
 
-	return (new);
+	return (NULL);
 }
