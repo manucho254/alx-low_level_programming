@@ -14,6 +14,7 @@ int pop_listint(listint_t **head)
 {
 	int n, val;
 
+	/** check if the linked list is NULL and return 0 */
 	if ((*head) == NULL)
 	{
 		return (0);
@@ -22,12 +23,12 @@ int pop_listint(listint_t **head)
 	n = 0;
 	while (n < 1)
 	{
-		listint_t *tmp;
+		listint_t *tmp; /** pointer to hold value of (*head)*/
 
 		tmp = (*head);
 		val = ((*head)->n);
 		(*head) = (*head)->next;
-		free(tmp);
+		free(tmp); /** free memory at for node at head of list */
 		n++;
 	}
 
