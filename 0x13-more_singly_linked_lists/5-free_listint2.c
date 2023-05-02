@@ -10,9 +10,11 @@
 
 void free_listint2(listint_t **head)
 {
-	listint_t *new;
 
-	new = NULL;
+	if (head == NULL || (*head) == NULL)
+	{
+		return;
+	}
 	while ((*head))
 	{
 		listint_t *tmp;
@@ -21,6 +23,7 @@ void free_listint2(listint_t **head)
 		(*head) = (*head)->next;
 		free(tmp);
 	}
-	head = &new;
+	/** set the pointer to null */
+	(*head) = NULL;
 }
 
