@@ -22,6 +22,7 @@ int main(void)
 	add_nodeint_end(&head, 402);
 	add_nodeint_end(&head, 1024);
 	add_nodeint_end(&head, 10);
+	add_nodeint_end(&head, 1000);
 	print_listint(head);
 	free_listint2(&head);
 	printf("%p\n", (void *)head);
