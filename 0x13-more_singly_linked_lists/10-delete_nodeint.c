@@ -13,14 +13,9 @@
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *current_node, *temp_var_1, *temp_var_2, *tmp = NULL;
+	listint_t *current_node = NULL, *temp_var_1 = NULL, *tmp = NULL;
 	unsigned int x = 0;
 
-	current_node = NULL;
-	if ((*head) == NULL)
-	{
-		return (-1);
-	}
 	while ((*head))
 	{
 		current_node = (*head);
@@ -44,12 +39,13 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (-1);
 	}
 	/** add values in new to head */
+	current_node = NULL;
 	while (temp_var_1)
 	{
-		temp_var_2 = temp_var_1;
+		current_node = temp_var_1;
 		add_nodeint_end(head, temp_var_1->n);
 		temp_var_1 = temp_var_1->next;
-		free(temp_var_2);
+		free(current_node);
 	}
 
 	return (1);
