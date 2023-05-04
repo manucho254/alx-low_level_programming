@@ -15,7 +15,7 @@ void print_binary(unsigned long int n)
 	{
 		if ((n & mask) == 0)
 		{
-			num += (num * 10) + 0;
+			num = (num * 10) + 0;
 			if (num > 0)
 			{
 				_putchar('0');
@@ -23,7 +23,7 @@ void print_binary(unsigned long int n)
 		}
 		else
 		{
-			num += (num * 10) + 1;
+			num = (num * 10) + 1;
 			_putchar('1');
 		}
 		mask = mask >> 1; /** Right shift*/
