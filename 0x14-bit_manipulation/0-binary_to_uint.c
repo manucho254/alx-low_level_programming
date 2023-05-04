@@ -13,7 +13,7 @@ int _pow_func(int x, int y);
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int x, y, len, rem = 0, dec = 0;
-	long unsigned int bin = 0;
+	long int bin = 0;
 
 	if (b == NULL)
 	{
@@ -38,7 +38,7 @@ unsigned int binary_to_uint(const char *b)
 		rem = bin % 10;
 		bin /= 10;
 		dec += rem * _pow_func(2, y);
-		++y;
+		y++;
 	}
 
 	return (dec);
