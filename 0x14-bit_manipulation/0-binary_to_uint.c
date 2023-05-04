@@ -13,7 +13,7 @@ int _pow_func(int x, int y);
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int x, y, len, rem = 0, dec = 0;
-	long int bin = 0;
+	unsigned long int bin = 0;
 
 	if (b == NULL)
 	{
