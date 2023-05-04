@@ -31,7 +31,6 @@ unsigned int binary_to_uint(const char *b)
 		bin = (bin * 10) + (b[x] - '0');
 	}
 
-	/** convert binary to decimal */
 	y = 0;
 	while (bin != 0)
 	{
