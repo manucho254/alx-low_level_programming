@@ -35,6 +35,7 @@ unsigned int binary_to_uint(const char *b)
 	y = 0;
 	while (bin != 0)
 	{
+		/** convert to decimal using base 10 */
 		rem = bin % 10;
 		bin /= 10;
 		dec += rem * _pow_func(2, y);
@@ -53,9 +54,9 @@ unsigned int binary_to_uint(const char *b)
 
 int _pow_func(int x, int y)
 {
-	if (y < 0)
+	if (x == 0)
 	{
-		return (-1);
+		return (0);
 	}
 	if (y == 0)
 	{
