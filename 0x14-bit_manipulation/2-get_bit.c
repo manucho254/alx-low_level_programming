@@ -13,7 +13,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	/** mask = [1000 0000 0000 0000]*/
 
 	x = 0;
-	while (mask > 0 || x <= index)
+	while (x <= index)
 	{
 		if (x == index)
 		{
