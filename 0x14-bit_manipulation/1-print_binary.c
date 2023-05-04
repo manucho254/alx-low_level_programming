@@ -16,7 +16,7 @@ void print_binary(unsigned long int n)
 		if ((n & mask) == 0)
 		{
 			num += (num * 10) + 0;
-			if(num > 0)
+			if (num > 0)
 			{
 				_putchar('0');
 			}
