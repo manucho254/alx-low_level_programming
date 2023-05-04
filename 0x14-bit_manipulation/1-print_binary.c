@@ -8,18 +8,29 @@
 void print_binary(unsigned long int n)
 {
 	unsigned int mask = 32768;
+	unsigned long int num = 0;
 	/** mask = [1000 0000 0000 0000]*/
 
 	while (mask > 0)
 	{
 		if ((n & mask) == 0)
 		{
-			_putchar('0');
+			num += (num * 10) + 0;
+			if(num > 0)
+			{
+				_putchar('0');
+			}
 		}
 		else
 		{
+			num += (num * 10) + 1;
 			_putchar('1');
 		}
 		mask = mask >> 1; /** Right shift*/
+	}
+
+	if (num == 0)
+	{
+		_putchar('0');
 	}
 }
