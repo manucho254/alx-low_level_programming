@@ -2,7 +2,6 @@
 #include <string.h>
 #include <ctype.h>
 
-int _pow_func(int x, int y);
 /**
  * binary_to_uint - convert binary to a decimal number.
  * @b: pointer to chars array containing binary number
@@ -36,31 +35,10 @@ unsigned int binary_to_uint(const char *b)
 	{
 		/** convert to decimal using base 10 */
 		rem = bin % 10;
+		dec += rem << y;
 		bin /= 10;
-		dec += rem * _pow_func(2, y);
 		y++;
 	}
 
 	return (dec);
-}
-
-/**
- * _pow_func - function to get the power of a number
- * @x: number to get power of
- * @y: base to use for the number
- * Return: the power of a number
- */
-
-int _pow_func(int x, int y)
-{
-	if (x == 0)
-	{
-		return (0);
-	}
-	if (y == 0)
-	{
-		return (1);
-	}
-
-	return (x * _pow_func(x, y - 1));
 }
