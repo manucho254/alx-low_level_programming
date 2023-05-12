@@ -7,7 +7,6 @@
 
 #define READ_BUFFER 1024
 
-
 int copy_to_file(char *file_from, char *file_to);
 /**
  * main - entry point
@@ -64,6 +63,7 @@ int copy_to_file(char *file_from, char *file_to)
 	read_size = read(from_size, str, READ_BUFFER);
 	if (read_size < 0)
 	{
+		close(from_size);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
@@ -73,6 +73,7 @@ int copy_to_file(char *file_from, char *file_to)
 	/** check for errors when opening file */
 	if (to_size < 0)
 	{
+		close(from_size);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
@@ -83,6 +84,8 @@ int copy_to_file(char *file_from, char *file_to)
 	/** check for errors in write */
 	if (write_size < 0 || write_size != read_size)
 	{
+		close(from_size);
+		close(to_size);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
