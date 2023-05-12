@@ -42,7 +42,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	write_size = write(POSIX, str, read_size);
 
 	/** check if write failed */
-	if (write_size < 0 || write_size < read_size)
+	if (write_size < 0)
 	{
 		return (0);
 	}
