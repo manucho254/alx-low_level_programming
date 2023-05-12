@@ -15,7 +15,7 @@ int copy_to_file(char *file_from, char *file_to);
  * @argc: number of arguments passed to function
  * @argv: array of strings containing the arguments
  *
- * Return: 1 if success
+ * Return: 0 if success
  */
 
 int main(int argc, char *argv[])
@@ -90,7 +90,7 @@ int copy_to_file(char *file_from, char *file_to)
 		exit(100);
 	}
 
-	return (1);
+	return (0);
 }
 
 
