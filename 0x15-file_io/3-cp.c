@@ -52,7 +52,6 @@ int copy_to_file(char *file_from, char *file_to)
 {
 	int from_size, to_size, read_size, write_size = 0;
 	char *str;
-	int close_from, close_to;
 
 	str = malloc((READ_BUFFER + 1) * sizeof(char *));
 	if (str == NULL)
@@ -69,6 +68,11 @@ int copy_to_file(char *file_from, char *file_to)
 	}
 	/** read the file one */
 	read_size = read(from_size, str, READ_BUFFER);
+	if (read_size < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		exit(98);
+	}
 	str[read_size + 1] = '\0';
 	/** open the second file */
 	to_size = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
@@ -89,14 +93,14 @@ int copy_to_file(char *file_from, char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-	close_from = close(from_size);
-	close_to = close(to_size);
-	if (close_from < 0)
+	/** close all the files */
+
+	if (close(from_size) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from_size);
 		exit(100);
 	}
-	if (close_to < 0)
+	if (close(to_size) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to_size);
 		exit(100);
@@ -104,5 +108,3 @@ int copy_to_file(char *file_from, char *file_to)
 
 	return (0);
 }
-
-
