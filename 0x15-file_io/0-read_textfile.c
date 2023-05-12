@@ -4,8 +4,6 @@
 #include <fcntl.h>
 #include <stdio.h>
 
-#define POSIX 1 /** standard output value */
-
 /**
  * read_textfile - function to read data from a text file and print it
  * @filename: name of file to read data from
@@ -38,12 +36,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	str[read_size + 1] = '\0';
-
-	write_size = write(POSIX, str, read_size);
+	write_size = write(STDOUT_FILENO, str, read_size);
 	free(str);
 
 	/** check if write failed */
-	if (write_size < 0)
+	if (write_size < 0 || write_size != read_size)
 	{
 		return (0);
 	}
