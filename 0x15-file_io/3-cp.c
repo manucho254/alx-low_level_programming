@@ -88,7 +88,7 @@ int copy_to_file(char *file_from, char *file_to)
 		free(str);
 	}
 	/** check for errors in write */
-	if (write_size < 0)
+	if (write_size < 0 || write_size != read_size)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
