@@ -48,10 +48,7 @@ int copy_to_file(char *file_from, char *file_to)
 	char *str;
 
 	str = malloc((READ_BUFFER) * sizeof(char *));
-	if (str == NULL)
-	{
-		exit(98);
-	}
+
 	/** open the first file */
 	from_size = open(file_from, O_RDONLY);
 	/** check for errors in file */
