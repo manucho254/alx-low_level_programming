@@ -66,18 +66,14 @@ int copy_to_file(char *file_from, char *file_to)
 	str[read_size + 1] = '\0';
 	/** open the second file */
 	to_size = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
-	/** check for errors in file */
-	if (to_size < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		exit(99);
-	}
+
 	if (str != NULL)
 	{
 		write_size = write(to_size, str, strlen(str));
 		free(str);
 	}
-	if (write_size < 0)
+	/** check for errors in file */
+	if (write_size < 0 || to_size < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
