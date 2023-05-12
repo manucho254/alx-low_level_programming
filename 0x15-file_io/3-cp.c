@@ -66,7 +66,6 @@ int copy_to_file(char *file_from, char *file_to)
 	str[read_size + 1] = '\0';
 	/** open the second file */
 	to_size = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
-
 	if (str != NULL)
 	{
 		write_size = write(to_size, str, strlen(str));
