@@ -94,7 +94,7 @@ int copy_to_file(char *file_from, char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", close_from);
 		exit(100);
 	}
-	if (close_from < 0)
+	if (close_to < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", close_to);
 		exit(100);
