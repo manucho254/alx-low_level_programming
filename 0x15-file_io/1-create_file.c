@@ -27,7 +27,7 @@ int create_file(const char *filename, char *text_content)
 	 * permission 0600 means read and write
 	 */
 
-	file = open(filename, O_RDWR | O_CREAT | O_EXCL, 0600);
+	file = open(filename, O_RDWR | O_CREAT | O_EXCL | O_TRUNC, 0600);
 	/** check if opening file failed */
 	if (file < 0)
 	{
