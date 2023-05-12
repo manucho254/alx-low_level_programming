@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
  */
 int copy_to_file(char *file_from, char *file_to)
 {
-	int from_size = 0, to_size = 0, read_size = 0, write_size = 0;
+	int from_size, to_size, read_size, write_size = 0;
 	char *str;
 	int close_from, close_to;
 
