@@ -75,6 +75,7 @@ int copy_to_file(char *file_from, char *file_to)
 	if (str != NULL)
 	{
 		write_size = write(to_size, str, strlen(str));
+		free(str);
 	}
 	if (write_size < 0)
 	{
