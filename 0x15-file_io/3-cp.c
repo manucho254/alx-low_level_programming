@@ -48,7 +48,10 @@ int copy_to_file(char *file_from, char *file_to)
 	char *str;
 
 	str = malloc((READ_BUFFER) * sizeof(char *));
-
+	if (str == NULL)
+	{
+		exit(1);
+	}
 	/** open the first file */
 	from_size = open(file_from, O_RDONLY);
 	/** check for errors in file */
@@ -73,11 +76,10 @@ int copy_to_file(char *file_from, char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-	if (str != NULL)
-	{
-		write_size = write(to_size, str, strlen(str));
-		free(str);
-	}
+
+	write_size = write(to_size, str, strlen(str));
+	free(str);
+
 	/** check for errors in write */
 	if (write_size < 0 || write_size != read_size)
 	{
