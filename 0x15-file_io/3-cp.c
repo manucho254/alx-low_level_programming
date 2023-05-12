@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
  */
 int copy_to_file(char *file_from, char *file_to)
 {
-	int from_size, to_size, read_size, write_size = 0;
+	int from_size, to_size, read_size, write_size;
 	char *str;
 
 	str = malloc((READ_BUFFER + 1) * sizeof(char *));
