@@ -31,12 +31,6 @@ int main(int argc, char *argv[])
 	file_from = argv[1];
 	file_to = argv[2];
 
-	if (file_from == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
-	}
-
 	return (copy_to_file(file_from, file_to));
 }
 
