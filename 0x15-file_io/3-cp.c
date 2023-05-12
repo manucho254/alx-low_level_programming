@@ -77,7 +77,7 @@ int copy_to_file(char *file_from, char *file_to)
 		exit(99);
 	}
 
-	write_size = write(to_size, str, strlen(str));
+	write_size = write(to_size, str, read_size);
 	free(str);
 
 	/** check for errors in write */
