@@ -61,7 +61,7 @@ int copy_to_file(char *file_from, char *file_to)
 		exit(98);
 	}
 	/** read the file one */
-	read_size = read(from_size, str, READ_BUFFER + 1);
+	read_size = read(from_size, str, READ_BUFFER);
 	if (read_size < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
