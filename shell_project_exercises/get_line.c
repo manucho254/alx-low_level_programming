@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
 
 /**
  * main - using getline example
@@ -10,20 +11,29 @@
 
 int main(void)
 {
-	char *buffer = NULL;
+	char *buffer;
 	size_t buffsize = 0;
 	int characters = 0;
+	char exit_app[] = "exit\n";
 
-	printf("$ ");
-	/** characters holds the return value of getline */
-	characters = getline(&buffer, &buffsize, stdin);
-	/** checking for errors in getline */
-	if (characters == -1)
+	while (1)
 	{
-		perror("Error:");
+		printf("$");
+		/** characters holds the return value of getline */
+		characters = getline(&buffer, &buffsize, stdin);
+		/** checking for errors in getline */
+		if (characters == -1)
+		{
+			perror("Error:");
+			return (1);
+		}
+		/** exit application of exit */
+		if (strcmp(buffer, exit_app) == 0)
+		{
+			break;
+		}
+		printf("%s", buffer);
 	}
-
-	printf("%s", buffer);
 
 	return (0);
 }
