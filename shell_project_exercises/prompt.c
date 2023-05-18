@@ -16,6 +16,7 @@ int main(void)
 	int characters = 0;
 	char exit_app[] = "exit\n";
 
+	printf("Exit application using: exit\n\n");
 	while (1)
 	{
 		printf("$ ");
