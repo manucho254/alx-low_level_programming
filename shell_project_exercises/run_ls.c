@@ -21,6 +21,7 @@ int main(void)
 	char command[] = "ls -l /tmp";
 	char **command_arr;
 
+	pipes = create_pipes();
 	/** creating multiple processes */
 	for (i = 0; i < PROCESS_NUM; i++)
 	{
@@ -49,9 +50,17 @@ int main(void)
 }
 
 /**
- * process_works 
+ * run_functions - function to run different,
+ * functions on different processes.
+ *
+ * @process_index: index of the process.
+ * @pipes: an array of pipes.
+ *
+ * Return: an array of pipes
+ * Description: function to run different,
+ * funtions in different processes.
  */
-int **process_works(int process_index, int **pipes)
+int **run_functions(int process_index, int **pipes)
 {
 	/** work in child processes */
 	if (process_index == 0)
@@ -77,7 +86,7 @@ int **process_works(int process_index, int **pipes)
 
 /**
  * read_and_write_to_pipe - read and write to pipes
- * 
+ *
  * @index: process index
  * @pipes: pipes array
  */
