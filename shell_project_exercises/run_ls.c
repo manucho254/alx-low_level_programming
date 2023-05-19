@@ -10,16 +10,22 @@
 /**
  * main - run command in separate processes
  *
- * Return: always 0 if success
+ * @argc: number of command line arguments.
+ * @argv: array of command line arguments.
+ * @env: current environment.
+ *
+ * Return: always 0 if success.
  */
 
-int main(void)
+int main(int argc, char *argv[], char *env[])
 {
 	pid_t pids[PROCESS_NUM]; /** array with process ids */
 	int i;
 	int pipes[PROCESS_NUM][2];
 	char command[] = "ls -l /tmp";
 	char **command_arr;
+	(void)argc; /** we won't use argc */
+	(void)argv; /** we won't use argv */
 
 	pipes = create_pipes();
 	/** creating multiple processes */
@@ -36,7 +42,7 @@ int main(void)
 		if (pids[i] == 0)
 		{
 			/** work in child processes */
-			pipes = process_works(i, pipes);
+			pipes = run_functions(i, pipes, env);
 			return (0);
 		}
 	}
@@ -55,21 +61,25 @@ int main(void)
  *
  * @process_index: index of the process.
  * @pipes: an array of pipes.
+ * @env: current environment variables
  *
  * Return: an array of pipes
  * Description: function to run different,
  * funtions in different processes.
  */
-int **run_functions(int process_index, int **pipes)
+int **run_functions(int process_index, int **pipes, char **env)
 {
+	char **command_arr;
+
 	/** work in child processes */
 	if (process_index == 0)
 	{
 		command_arr = separate_string(command);
+		read_and_write_to_pipe(process_index, pipes, command_arr);
 	}
 	if (process_index == 1)
 	{
-
+		execve(pipes[process_index][0], pipes[process_index][0], NULL);
 	}
 	if (process_index == 2)
 	{
@@ -89,12 +99,14 @@ int **run_functions(int process_index, int **pipes)
  *
  * @index: process index
  * @pipes: pipes array
+ * @data: data to copy to pipe
  */
 
-void read_and_write_to_pipe(int index, int **pipes)
+void read_and_write_to_pipe(int index, int **pipes, char *data)
 {
 	int j;
 
+	/** close unused pipes */
 	for (j = 0; j < PROCESS_NUM + 1; j++)
 	{
 		if (index != j)
@@ -106,6 +118,18 @@ void read_and_write_to_pipe(int index, int **pipes)
 			close(pipes[j][1])
 		}
 	}
+
+	if (read(pipes[index][0], data, sizeof(char)) == -1)
+	{
+		perror("Error at writing \n");
+	}
+
+	if (write(pipes[index + 1][1], data, sizeof(char)) == -1)
+	{
+		perror("Error at writing");
+	}
+	close(pipes[index][0]);
+	close(pipes[i + 1][1]);
 }
 
 /**
@@ -113,6 +137,7 @@ void read_and_write_to_pipe(int index, int **pipes)
  *
  * Return: an array of pipes
  */
+
 int **create_pipes(void)
 {
 	int i;

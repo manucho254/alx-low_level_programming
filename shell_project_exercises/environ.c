@@ -1,16 +1,25 @@
 #include <unistd.h>
 #include <stdio.h>
 
-extern char **environ;
+/**
+ * main - getting the environ
+ *
+ * @argc: number of command line arguments
+ * @argv: array of command line arguments
+ * @env: curent environment
+ *
+ * Return: always 0 if sucess
+ */
 
-int main(void)
+int main(int argc, char *argv[], char *env[])
 {
 	int i = 0;
+	(void)argc;
+	(void)argv;
 
-	/** loop through the environ*/
-	while(environ[i])
+	while (env[i])
 	{
-		printf("%s\n", environ[i]);
+		printf("%s\n", env[i]);
 		i++;
 	}
 	return (0);

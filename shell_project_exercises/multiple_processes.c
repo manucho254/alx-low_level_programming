@@ -7,7 +7,6 @@
 
 #define PROCESS_NUM 10 /** number of processes */
 
-
 /**
  * main - forking multiple times
  *
