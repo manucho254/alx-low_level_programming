@@ -17,20 +17,39 @@
 int main(void)
 {
 	char command[] = "/bin/ls -l /tmp";
-	char **command_arr;
+	char **command_arr, **tmp;
+	pid_t child_pid;
+
+	child_pid = fork();
+	tmp = NULL;
+	/** checking for forking error */
+	if (child_pid < 0)
+	{
+		perror("Error forking");
+		return (1);
+	}
 
 	command_arr = separate_string(command);
 	if (command_arr == NULL)
 	{
-		return(1);
+		return (1);
 	}
-	if (execve(command_arr[0], command_arr, NULL) == -1)
+	/** run execve in child process */
+	if (child_pid == 0)
 	{
-		perror("Error running program");
-		exit(1);
+		if (execve(command_arr[0], command_arr, tmp) == -1)
+		{
+			perror("Error running program");
+			exit(1);
+		}
+	}
+	else
+	{
+		wait(NULL);
+		printf("%s\n", command_arr[0]);
+		printf("Parrent process.\n");
 	}
 
-	free_arr(command_arr);
 	return (0);
 }
 
@@ -42,9 +61,16 @@ int main(void)
 
 void free_arr(char **s)
 {
-	while (*s)
+	int i;
+
+	if (s == NULL || *s == NULL)
 	{
-		free(*s);
+		return;
+	}
+
+	for (i = 0; s[i] != NULL; i++)
+	{
+		free(s[i]);	
 	}
 	free(s);
 }
@@ -83,6 +109,7 @@ char **separate_string(char *s)
 	}
 	cmd_array[count + 1] = '\0'; /** add null pointer to cmd_array */
 	portion = strtok(tmp, deli); /** split string using space */
+	free(tmp); /** free tmp */
 	while (portion != NULL)
 	{
 		cmd_array[x] = malloc(strlen(portion) * sizeof(char));
@@ -94,6 +121,5 @@ char **separate_string(char *s)
 		portion = strtok(NULL, " "); /** update value of portion */
 		x++;
 	}
-	free(tmp); /** free tmp */
 	return (cmd_array);
 }
