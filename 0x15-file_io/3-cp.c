@@ -33,9 +33,7 @@ int main(int argc, char *argv[])
 
 	status = copy_to_file(file_from, file_to);
 
-	exit(status);
-
-	return (0);
+	return (status);
 }
 
 /**
@@ -54,14 +52,14 @@ int copy_to_file(char *file_from, char *file_to)
 	/** open the first file */
 	from_size = open(file_from, O_RDONLY);
 	/** check for errors in file */
-	if (from_size < 0)
+	if (from_size == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		return (98);
 	}
 	to_size = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
 	/** check for errors when opening file */
-	if (to_size < 0)
+	if (to_size == -1)
 	{
 		close(from_size);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
@@ -73,7 +71,7 @@ int copy_to_file(char *file_from, char *file_to)
 	/** read the file one */
 	while ((read_size = read(from_size, str, READ_BUFFER)) > 0)
 	{
-		if (read_size < 0)
+		if (read_size == -1)
 		{
 			close(from_size);
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
@@ -81,7 +79,7 @@ int copy_to_file(char *file_from, char *file_to)
 		}
 		write_size = write(to_size, str, read_size);
 		/** check for errors in write */
-		if (write_size < 0 || write_size != read_size)
+		if (write_size == -1 || write_size != read_size)
 		{
 			close(from_size);
 			close(to_size);
@@ -91,12 +89,12 @@ int copy_to_file(char *file_from, char *file_to)
 	}
 	free(str);
 	/** close all the files */
-	if (close(from_size) < 0)
+	if (close(from_size) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from_size);
 		return (100);
 	}
-	if (close(to_size) < 0)
+	if (close(to_size) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to_size);
 		return (100);
