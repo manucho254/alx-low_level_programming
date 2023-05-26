@@ -33,7 +33,9 @@ int main(int argc, char *argv[])
 
 	status = copy_to_file(file_from, file_to);
 
-	return (status);
+	exit(status);
+
+	return (0);
 }
 
 /**
