@@ -43,14 +43,9 @@ int main(int argc, char *argv[])
  */
 int copy_to_file(char *file_from, char *file_to)
 {
-	int from_size, to_size, read_size, write_size;
+	int from_size, to_size, read_size = 0, write_size;
 	char *str;
 
-	str = malloc((READ_BUFFER + 1) * sizeof(char *));
-	if (str == NULL)
-	{
-		exit(1);
-	}
 	/** open the first file */
 	from_size = open(file_from, O_RDONLY);
 	/** check for errors in file */
@@ -59,16 +54,6 @@ int copy_to_file(char *file_from, char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	/** read the file one */
-	read_size = read(from_size, str, READ_BUFFER);
-	if (read_size < 0)
-	{
-		close(from_size);
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
-	}
-	str[read_size + 1] = '\0';
-	/** open the second file */
 	to_size = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
 	/** check for errors when opening file */
 	if (to_size < 0)
@@ -77,20 +62,30 @@ int copy_to_file(char *file_from, char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-
-	write_size = write(to_size, str, read_size);
-	free(str);
-
-	/** check for errors in write */
-	if (write_size < 0 || write_size != read_size)
+	str = malloc(READ_BUFFER * sizeof(char));
+	if (str == NULL)
+		exit(1);
+	/** read the file one */
+	while ((read_size = read(from_size, str, READ_BUFFER)) > 0)
 	{
-		close(from_size);
-		close(to_size);
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		exit(99);
+		if (read_size < 0)
+		{
+			close(from_size);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+			exit(98);
+		}
+		write_size = write(to_size, str, read_size);
+		/** check for errors in write */
+		if (write_size < 0 || write_size != read_size)
+		{
+			close(from_size);
+			close(to_size);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+			exit(99);
+		}
 	}
+	free(str);
 	/** close all the files */
-
 	if (close(from_size) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from_size);
