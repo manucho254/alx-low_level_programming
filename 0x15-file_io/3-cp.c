@@ -20,6 +20,7 @@ int copy_to_file(char *file_from, char *file_to);
 int main(int argc, char *argv[])
 {
 	char *file_from, *file_to;
+	int status;
 
 	if (argc != 3)
 	{
@@ -30,7 +31,9 @@ int main(int argc, char *argv[])
 	file_from = argv[1];
 	file_to = argv[2];
 
-	return (copy_to_file(file_from, file_to));
+	status = copy_to_file(file_from, file_to);
+
+	return (status);
 }
 
 /**
@@ -52,7 +55,7 @@ int copy_to_file(char *file_from, char *file_to)
 	if (from_size < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
+		return (98);
 	}
 	to_size = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
 	/** check for errors when opening file */
@@ -60,11 +63,11 @@ int copy_to_file(char *file_from, char *file_to)
 	{
 		close(from_size);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		exit(99);
+		return (99);
 	}
 	str = malloc(READ_BUFFER * sizeof(char));
 	if (str == NULL)
-		exit(1);
+		return (1);
 	/** read the file one */
 	while ((read_size = read(from_size, str, READ_BUFFER)) > 0)
 	{
@@ -72,7 +75,7 @@ int copy_to_file(char *file_from, char *file_to)
 		{
 			close(from_size);
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-			exit(98);
+			return (98);
 		}
 		write_size = write(to_size, str, read_size);
 		/** check for errors in write */
@@ -81,7 +84,7 @@ int copy_to_file(char *file_from, char *file_to)
 			close(from_size);
 			close(to_size);
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-			exit(99);
+			return (99);
 		}
 	}
 	free(str);
@@ -89,12 +92,12 @@ int copy_to_file(char *file_from, char *file_to)
 	if (close(from_size) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from_size);
-		exit(100);
+		return (100);
 	}
 	if (close(to_size) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to_size);
-		exit(100);
+		return (100);
 	}
 
 	return (0);
