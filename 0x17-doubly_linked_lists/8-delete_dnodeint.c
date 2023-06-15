@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 /**
- * delete_nodeint_at_index - function that that deletes node,
+ * delete_dnodeint_at_index - function that that deletes node,
  * at index specified
  *
  * @head: pointer to linked list
  * @index: index for node to be deleted
  *
- * Return: pointer to new node or null if it failed
+ * Return: 1 if successful else return -1
  */
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
