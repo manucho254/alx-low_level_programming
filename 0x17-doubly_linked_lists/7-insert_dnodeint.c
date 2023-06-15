@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * insert_dnodeint_at_index - function that inserts a,
@@ -14,38 +14,41 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *tail = NULL, *head = NULL;
+	dlistint_t *new, *tail = NULL, *head = NULL;
 	size_t count = 0;
-	int found = 0;
 
-	if (h == NULL)
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
+	new->prev = NULL;
+	new->n = n;
+	new->next = NULL;
+	if ((*h) == NULL && idx == 0)
 	{
+		(*h) = new;
+		return (*h);
+	}
+	if ((*h) == NULL || idx == 0)
+	{
+		free(new);
 		return (NULL);
 	}
-
 	while (*h)
 	{
 		if (count == idx)
 		{
 			tail = (*h);
-			found = 1;
 			break;
 		}
-		/** add nodes to head */
 		add_dnodeint_end(&head, (*h)->n);
 		(*h) = (*h)->next;
 		count++;
 	}
-
-	/** check if the index was found */
-	if (found == 0)
+	if (tail == NULL) /** check if the index was found */
 		return (NULL);
-
-	/** update value of (*h) */
-	(*h) = head;
+	(*h) = head; /** update value of (*h) */
 	add_dnodeint_end(&head, n); /** add the new node to list */
-	/** insert the values at the end to new linked list */
-	while (tail)
+	while (tail) /** insert the values at the end to new linked list */
 	{
 		add_dnodeint_end(&head, tail->n);
 		tail = tail->next;
