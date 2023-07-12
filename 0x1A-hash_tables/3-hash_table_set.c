@@ -30,7 +30,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	item->key = strdup((char *)key);
-	item->value = value;
+	item->value = strdup(value);
 	item->next = NULL;
 
 	/** iterate through the hash table find the index and add an item */
