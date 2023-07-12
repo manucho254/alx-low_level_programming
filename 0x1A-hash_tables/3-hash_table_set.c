@@ -43,6 +43,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		if (x == index && ht->array[x])
 		{
+			if (strcmp(item->key, ht->array[x]->key) == 0)
+			{
+				ht->array[x]->value = item->value;
+				break;
+			}
 			item->next = ht->array[x];
 			ht->array[x] = item;
 			break;
