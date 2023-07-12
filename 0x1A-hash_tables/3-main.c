@@ -18,7 +18,10 @@ int main(void)
 	hash_table_set(ht, "betty", "cool");
 	hash_table_set(ht, "hetairas", "fun");
 	hash_table_set(ht, "mentioner", "yes");
-	hash_table_set(ht, "test", NULL);
+	hash_table_set(ht, "Holberton", "is cool");
+	hash_table_set(ht, "Holberton", "is soooo cooool");
+	hash_table_set(ht, "Holberton", "is awesome");
+
 	for (x = 0; x < ht->size; x++)
 	{
 		if (ht->array[x])
