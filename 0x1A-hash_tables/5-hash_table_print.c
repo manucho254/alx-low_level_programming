@@ -23,16 +23,17 @@ void hash_table_print(const hash_table_t *ht)
 	printf("{");
 	for (x = 0; x < ht->size; x++)
 	{
-		if (ht->array[x])
+		if (ht->array[x] != NULL)
 		{
+			hash_node_t *head = ht->array[x];
+
 			if (!add_comma)
 				printf(", ");
-			while (ht->array[x]->next)
+			while (head)
 			{
-				printf("'%s': '%s'", ht->array[x]->key, ht->array[x]->value);
-				ht->array[x] = ht->array[x]->next;
+				printf("'%s': '%s'", head->key, head->value);
+				head = head->next;
 			}
-			printf("'%s': '%s'", ht->array[x]->key, ht->array[x]->value);
 			if (add_comma == 1)
 				add_comma = 0;
 		}
