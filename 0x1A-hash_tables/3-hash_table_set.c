@@ -29,7 +29,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (item == NULL)
 		return (0);
 
-	item->key = (char *)key;
+	item->key = strdup((char *)key);
 	item->value = strdup(value);
 	item->next = NULL;
 
