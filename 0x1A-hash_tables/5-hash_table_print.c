@@ -33,7 +33,8 @@ void hash_table_print(const hash_table_t *ht)
 				ht->array[x] = ht->array[x]->next;
 			}
 			printf("'%s': '%s'", ht->array[x]->key, ht->array[x]->value);
-			add_comma = 0;
+			if (add_comma == 1)
+				add_comma = 0;
 		}
 	}
 	printf("}\n");
