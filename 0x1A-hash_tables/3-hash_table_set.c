@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index, x;
 	hash_node_t *item;
 
-	if (ht == NULL || strcmp(key, "") == 0 || key == NULL || value == NULL)
+	if (ht == NULL || strcmp(key, "") == 0)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
@@ -30,7 +30,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	item->key = strdup((char *)key);
-	item->value = strdup(value);
+	item->value = value;
 	item->next = NULL;
 
 	/** iterate through the hash table find the index and add an item */
