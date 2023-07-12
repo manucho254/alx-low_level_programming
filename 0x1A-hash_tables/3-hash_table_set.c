@@ -41,7 +41,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			ht->array[x] = item;
 			break;
 		}
-		if (x == index && ht->array[x] != NULL)
+		if (x == index && ht->array[x])
 		{
 			item->next = ht->array[x];
 			ht->array[x] = item;
