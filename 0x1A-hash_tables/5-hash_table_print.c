@@ -27,15 +27,15 @@ void hash_table_print(const hash_table_t *ht)
 		{
 			hash_node_t *head = ht->array[x];
 
-			if (!add_comma)
-				printf(", ");
 			while (head)
 			{
+				if (!add_comma)
+					printf(", ");
 				printf("'%s': '%s'", head->key, head->value);
 				head = head->next;
+				if (add_comma == 1)
+					add_comma = 0;
 			}
-			if (add_comma == 1)
-				add_comma = 0;
 		}
 	}
 	printf("}\n");
