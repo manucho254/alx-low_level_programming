@@ -4,6 +4,27 @@
 #include <stdio.h>
 
 /**
+ * free_hash_node - free hash node list
+ *
+ * @node: pointer to hash node
+ *
+ */
+
+void free_hash_node(hash_node_t *node)
+{
+	while (node)
+	{
+		hash_node_t *tmp = node;
+
+		node = node->next;
+		free(tmp->key);
+		free(tmp->value);
+		free(tmp);
+	}
+	free(node);
+}
+
+/**
  * hash_table_set - add new element to hash table
  *
  * @ht: pointer to hash table
@@ -25,8 +46,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/** check for malloc error */
 	if (item == NULL)
 		return (0);
-
-	item->key = strdup((char *)key);
+	item->key = strdup(key);
 	item->value = strdup(value);
 	item->next = NULL;
 	/** iterate through the hash table find the index and add an item */
@@ -42,17 +62,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (x == index && ht->array[x])
 		{
 			/** for cases where we have the same key */
-			if (strcmp(item->key, ht->array[x]->key) == 0)
+			if (strcmp(key, ht->array[x]->key) == 0)
 			{
-				ht->array[x]->value = item->value;
+				ht->array[x]->value = strdup(value);
+				free_hash_node(item);
 				break;
 			}
-			/** add node at th top */
 			item->next = ht->array[x];
 			ht->array[x] = item;
 			break;
 		}
 	}
-
+	if (x == ht->size)
+		free_hash_node(item);
 	return (1);
 }
