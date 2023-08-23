@@ -13,9 +13,6 @@ OBJ=$(SRC:.c=.o)
 #name of executable
 NAME=school
 
-# remove files
-RM=-rm -f
-
 all: prog
 
 prog: m.h $(OBJ)
