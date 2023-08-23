@@ -1,0 +1,6 @@
+# Using gcc compiler
+
+all: prog
+
+prog: m.h main.c school.c
+	gcc main.c school.c -o school
