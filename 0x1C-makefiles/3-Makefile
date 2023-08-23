@@ -1,0 +1,30 @@
+# Using gcc compiler
+CC=gcc
+
+#all c source files
+SRC=main.c school.c
+
+#all objects
+OBJ=$(SRC:.c=.o)
+
+#name of executable
+NAME=school
+
+# remove objects
+RM=-rm -f $(OBJ)
+
+all: prog
+
+prog: m.h $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	-rm -f *~ $(NAME)
+
+oclean:
+	$(RM)
+
+fclean:
+	$(RM) *~ $(NAME)
+
+re: oclean prog
