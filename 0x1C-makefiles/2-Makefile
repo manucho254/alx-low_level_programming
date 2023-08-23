@@ -5,12 +5,12 @@ CC=gcc
 SRC=main.c school.c
 
 #all objects
-OBJ=main.o school.o
+OBJ=$(SRC:.c=.o)
 
 #name of executable
 NAME=school
 
 all: prog
 
-prog: m.h $(SRC) $(OBJ)
+prog: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
