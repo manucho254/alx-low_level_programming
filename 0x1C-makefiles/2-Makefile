@@ -12,8 +12,5 @@ NAME=school
 
 all: prog
 
-prog: m.h $(OBJ)
+prog: m.h $(SRC) $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-main.o: main.c m.h
-school.o: school.c m.h
