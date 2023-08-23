@@ -1,0 +1,33 @@
+# Using gcc compiler
+CC=gcc
+
+# compile with flags
+CFLAGS=-Wall -Werror -Wextra -pedantic
+
+#all c source files
+SRC=main.c school.c
+
+#all objects
+OBJ=$(SRC:.c=.o)
+
+#name of executable
+NAME=school
+
+# remove files
+RM=-rm -f
+
+all: prog
+
+prog: m.h $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean:
+	$(RM) $(OBJ) *~ $(NAME)
+
+re: oclean prog
