@@ -1,0 +1,10 @@
+# Using gcc compiler
+CC:= gcc
+
+#all c source files
+SRC:= main.c school.c
+
+all: prog
+
+prog: m.h main.c school.c
+	$(CC) $(SRC) -o school
