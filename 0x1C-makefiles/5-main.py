@@ -13,3 +13,9 @@ if __name__ == "__main__":
             [0, 0, 0, 0, 0, 0]
             ]
     print(island_perimeter(grid))
+    grid = []
+    print(island_perimeter(grid))
+    grid = None
+    print(island_perimeter(grid))
+    grid = [[]]
+    print(island_perimeter(grid))

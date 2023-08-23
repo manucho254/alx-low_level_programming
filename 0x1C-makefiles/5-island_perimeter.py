@@ -13,6 +13,13 @@ def island_perimeter(grid):
               the perimeter of an island
     """
     perimeter = 0
+
+    if grid is None:
+        return perimeter
+
+    if len(grid) == 0:
+        return perimeter
+
     num_columns = len(grid[0])
     num_rows = len(grid)
     # Loop through each cell in the grid
