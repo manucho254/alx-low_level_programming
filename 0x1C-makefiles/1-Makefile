@@ -1,8 +1,8 @@
 # Using gcc compiler
-CC:= gcc
+CC:gcc
 
 #all c source files
-SRC:= main.c school.c
+SRC:main.c school.c
 
 all: prog
 
