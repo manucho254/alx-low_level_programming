@@ -1,7 +1,8 @@
-#include <stddef.h>
+#include <stdio.h>
 
 int _abs(float val);
 int _floor(float val);
+void print_array(int *array, int start, int end);
 
 /**
  * binary_search - implementation if a binary search algorithm.
@@ -26,10 +27,16 @@ int binary_search(int *array, size_t size, int value)
 	while (left <= right)
 	{
 		mid = (_floor(right + left) / 2);
+
+		print_array(array, left, right);
 		if (array[mid] < value)
+		{
 			left = mid + 1;
+		}
 		else if (array[mid] > value)
+		{
 			right = mid - 1;
+		}
 		else
 			return (mid);
 	}
@@ -64,4 +71,28 @@ int _abs(float val)
 int _floor(float val)
 {
 	return ((int)(_abs(val)));
+}
+
+/**
+ * print_array - print all values in an array
+ *
+ * @array: an array of integers
+ * @start: starting point of array
+ * @end: ending point of array
+ */
+
+void print_array(int *array, int start, int end)
+{
+	int x;
+
+	printf("Searching in array:");
+	for (x = start; x <= end; x++)
+	{
+		if (x != end)
+			printf(" %d,", array[x]);
+		else
+			printf(" %d", array[x]);
+	}
+
+	printf("\n");
 }

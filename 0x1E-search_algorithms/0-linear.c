@@ -1,4 +1,4 @@
-#include <stddef.h>
+#include <stdio.h>
 
 /**
  * linear_search - implementation if a linear search algorithm.
@@ -21,6 +21,7 @@ int linear_search(int *array, size_t size, int value)
 
 	for (x = 0; x < size; x++)
 	{
+		printf("Value checked array[%ld] = [%d]\n", x, array[x]);
 		/** check if array at x == value */
 		if (array[x] == value)
 			return (x);
