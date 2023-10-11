@@ -93,5 +93,5 @@ int jump_search(int *array, size_t size, int value)
 
 void print_array(int *array, int start)
 {
-	printf("Value checked array [%d] = [%d]\n", start, array[start]);
+	printf("Value checked array[%d] = [%d]\n", start, array[start]);
 }
