@@ -53,12 +53,16 @@ int binary_search(int *array, int left, int right, int value)
 	/** If the element is present at the middle itself */
 	if (array[mid] == value)
 	{
-		/** find left most value if we have duplicates in array */
+		/** find left most and rightmost value if we have duplicates in array */
 		int leftmost_index = binary_search(array, left, mid - 1, value);
+		int rightmost_index = binary_search(array, mid + 1, right, value);
 
 		if (leftmost_index != -1)
 			return (leftmost_index);
-		return (mid);
+		else if (rightmost_index != -1)
+			return (rightmost_index);
+		else
+			return (mid);
 	}
 	/** If element is smaller than mid, then */
 	/** it can only be present in left subarray */
